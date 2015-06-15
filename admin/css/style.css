@@ -144,6 +144,8 @@ body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .lef
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
   cursor: pointer;
+  background-color: transparent;
+  border: none;
 }
 body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .left-panel #vls-gf-gallery-tree li > .btn:hover {
   color: #222;
