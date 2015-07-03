@@ -23,7 +23,7 @@ if (!function_exists('add_action')) {
 }
 
 //defining global variables
-define( 'VLS_GF_VERSION', '1.1.0' );
+define( 'VLS_GF_VERSION', '1.1.1' );
 define('VLS_GF_DB_VERSION', 2);
 define('VLS_GF_MINIMUM_WP_VERSION', '3.9');
 define('VLS_GF_PLUGIN_URL', plugin_dir_url(__FILE__));
