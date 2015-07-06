@@ -4,7 +4,7 @@ Donate link: http://galleryfactory.vilyon.net/
 Tags: gallery manager, album, folder, gallery, grid layout, image, lightbox, metro layout, photo, portfolio, responsive, thumbnail, visual editor
 Requires at least: 3.9.0
 Tested up to: 4.2.2
-Stable tag: 1.1.0
+Stable tag: 1.1.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -82,3 +82,6 @@ GF checks if it can create the `/wp-content/gf-uploads` folder and write to it. 
 
 = 1.1.0 =
 * First release of the Lite version.
+
+= 1.1.1 =
+* Fixed a bug with Metro layout display.

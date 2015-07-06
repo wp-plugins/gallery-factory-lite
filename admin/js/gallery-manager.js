@@ -2365,4 +2365,3 @@ jQuery(document).ready(function () {
     VLS_GF.GalleryManager.init();
 });
 
-
