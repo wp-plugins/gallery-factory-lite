@@ -82,3 +82,6 @@ GF checks if it can create the `/wp-content/gf-uploads` folder and write to it. 
 
 = 1.1.0 =
 * First release of the Lite version.
+
+= 1.1.1 =
+* Fixed a bug with Metro layout display.
