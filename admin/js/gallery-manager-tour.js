@@ -54,8 +54,8 @@ VLS_GF.TourModule = (function ($) {
 
         //if we are closing on the last step, go to unsorted
         //if (currentStep < 0) {
-        VLS_GF.AlbumsPanelModule.loadGalleryTree();
-        $('.left-panel .fixed-items .unsorted a').trigger('click');
+        VLS_GF.NavigationPanelModule.loadGalleryTree();
+        $('.vls-gf-navigation-panel .vls-gf-fixed-items .unsorted a').trigger('click');
         //}
     }
 
@@ -67,68 +67,8 @@ VLS_GF.TourModule = (function ($) {
         $tour.find('.vls-gf-tour-progress span').eq(currentStep - 1).addClass('done');
         $tour.find('.vls-gf-tour-message').remove();
 
-        switch (currentStep) {
-            case 1:
-                step1();
-                break;
-            case 2:
-                step2();
-                break;
-            case 3:
-                step3();
-                break;
-            case 4:
-                step4();
-                break;
-            case 5:
-                step5();
-                break;
-            case 6:
-                step6();
-                break;
-            case 7:
-                step7();
-                break;
-            case 8:
-                step8();
-                break;
-            case 9:
-                step9();
-                break;
-            case 10:
-                step10();
-                break;
-            case 11:
-                step11();
-                break;
-            case 12:
-                step12();
-                break;
-            case 13:
-                step13();
-                break;
-            case 14:
-                step14();
-                break;
-            case 15:
-                step15();
-                break;
-            case 16:
-                step16();
-                break;
-            case 17:
-                step17();
-                break;
-            case 18:
-                step18();
-                break;
-            case 19:
-                step19();
-                break;
-            case 20:
-                step20();
-                break;
-        }
+        showStep[currentStep]();
+
     }
 
     function welcome() {
@@ -142,270 +82,282 @@ VLS_GF.TourModule = (function ($) {
         });
     }
 
-    //album panel overview
-    function step1() {
+    showStep = {
 
-        $tour.find('.vls-gf-tour-welcome-message').remove();
+        //album panel overview
+        1: function () {
 
-        var text = 'This is the Albums Panel. Here you can navigate your image collection and manage albums';
-        setTip('.vls-gf-gallery-manager-container .left-panel', 'r', 210, text);
+            $tour.find('.vls-gf-tour-welcome-message').remove();
 
-        setFocusOnElement('.vls-gf-gallery-manager-container .left-panel', 0, 0, 0, 0);
+            var text = 'This is the Navigation Panel. Here you can navigate your image collection and manage albums';
+            setTip('.vls-gf-gallery-manager-container .vls-gf-navigation-panel', 'r', 210, text);
+
+            setFocusOnElement('.vls-gf-gallery-manager-container .vls-gf-navigation-panel', 0, 0, 0, 0);
 
 
-    }
+        },
 
-    //navigating folders and albums
-    function step2() {
 
-        var text = "Expand the folder's contents by clicking on the folder.";
-        setTip('.vls-gf-gallery-manager-container .left-panel', 'r', 200, text);
+        //navigating folders and albums
+        2: function () {
 
-        blockNext = true;
+            var text = "Expand the folder's contents by clicking on the folder.";
+            setTip('.vls-gf-gallery-manager-container .vls-gf-navigation-panel', 'r', 200, text);
 
-        setTimeout(function () {
-            $('#vls-gf-gallery-tree .folder.level-1:eq(0)').trigger('click');
+            blockNext = true;
+
             setTimeout(function () {
-                $('#vls-gf-gallery-tree .folder.level-2:eq(1)').trigger('click');
+                $('#vls-gf-gallery-tree .folder.level-1:eq(0)').trigger('click');
                 setTimeout(function () {
-                    setFocusOnElement('#vls-gf-gallery-tree', 56, 0, 0, 0);
-                    blockNext = false;
+                    $('#vls-gf-gallery-tree .folder.level-2:eq(1)').trigger('click');
+                    setTimeout(function () {
+                        setFocusOnElement('#vls-gf-gallery-tree', 56, 0, 0, 0);
+                        blockNext = false;
+                    }, 500);
                 }, 500);
-            }, 500);
-        }, 1500);
+            }, 1500);
 
-    }
+        },
 
-    //edit mode - enter
-    function step3() {
+        //edit mode - enter
+        3: function () {
 
-        var text = 'Add, sort, move, rename or delete folders and albums by activating edit mode.';
-        setTip('#vls-gf-btn-edit-gallery-tree', 'r', 200, text);
+            var text = 'Add, sort, move, rename or delete folders and albums by activating edit mode.';
+            setTip('#vls-gf-btn-edit-gallery-tree', 'r', 200, text);
 
-        setFocusOnElement('#vls-gf-btn-edit-gallery-tree', 4, 4, 4, 4);
+            setFocusOnElement('#vls-gf-btn-edit-gallery-tree', 4, 4, 4, 4);
 
-    }
+        },
 
-    //edit mode - drag
-    function step4() {
+        //edit mode - drag
+        4: function () {
 
-        $('#vls-gf-btn-edit-gallery-tree').trigger('click');
+            $('#vls-gf-btn-edit-gallery-tree').trigger('click');
 
-        setTimeout(function () {
+            setTimeout(function () {
 
-            var text = 'Sort folders and albums and move them between folders by simply dragging them to the desired position.';
+                var text = 'Sort folders and albums and move them between folders by simply dragging them to the desired position.';
+                setTip('#vls-gf-gallery-tree', 'r', 200, text);
+
+                setFocusOnElement('#vls-gf-gallery-tree', 0, 0, 0, 0);
+
+            }, 100);
+
+        },
+
+        //edit mode - add
+        5: function () {
+
+            var text = 'Add a folder or an album by clicking these buttons';
+            setTip('#vls-gf-btn-add-new-folder', 'r', 210, text, 0);
+
+            setFocusOnElement('#vls-gf-btn-add-new-folder', 0, 0, 26, 0);
+
+        },
+
+        //edit mode - rename
+        6: function () {
+
+            var text = 'To rename a folder or an album click pencil icon.';
             setTip('#vls-gf-gallery-tree', 'r', 200, text);
+
+            setFocusOnElement('#vls-gf-gallery-tree', 0, -29, 0, -195);
+
+        },
+
+        //edit mode - delete
+        7: function () {
+
+            var text = 'To delete a folder or an album click trash bin icon.';
+            setTip('#vls-gf-gallery-tree', 'r', 200, text);
+
+            setFocusOnElement('#vls-gf-gallery-tree', 0, 0, 0, -214);
+
+        },
+
+        //edit mode - commit
+        8: function () {
+
+            var text = 'All changes made in edit mode are applied to the database only on saving changes. Clicking "Cancel" button will discard changes and bring the panel back to the navigation mode.';
+            setTip('#vls-gf-btn-gallery-tree-cancel', 'r', 200, text);
+
+            setFocusOnElement('#vls-gf-btn-gallery-tree-cancel', 0, 0, 0, 114);
+
+        },
+
+        //activating album, right panel
+        9: function () {
+
+            blockNext = true;
 
             setFocusOnElement('#vls-gf-gallery-tree', 0, 0, 0, 0);
 
-        }, 100);
-
-    }
-
-    //edit mode - add
-    function step5() {
-
-        var text = 'Add a folder or an album by clicking these buttons';
-        setTip('#vls-gf-btn-add-new-album', 'r', 210, text);
-
-        setFocusOnElement('#vls-gf-btn-add-new-folder', 0, 120, 0, 0);
-
-    }
-
-    //edit mode - rename
-    function step6() {
-
-        var text = 'To rename a folder or an album click these buttons.';
-        setTip('#vls-gf-gallery-tree', 'r', 200, text);
-
-        setFocusOnElement('#vls-gf-gallery-tree', 0, -29, 0, -195);
-
-    }
-
-    //edit mode - delete
-    function step7() {
-
-        var text = 'To delete a folder or an album click these buttons.';
-        setTip('#vls-gf-gallery-tree', 'r', 200, text);
-
-        setFocusOnElement('#vls-gf-gallery-tree', 0, 0, 0, -214);
-
-    }
-
-    //activating album, right panel
-    function step8() {
-
-        blockNext = true;
-
-        setFocusOnElement('#vls-gf-gallery-tree', 0, 0, 0, 0);
-
-        $('#vls-gf-btn-gallery-tree-cancel').trigger('click');
-        setTimeout(function () {
-
-            $('#vls-gf-gallery-tree .folder.level-1:eq(0)').trigger('click');
+            $('#vls-gf-btn-gallery-tree-cancel').trigger('click');
             setTimeout(function () {
-                $('#vls-gf-gallery-tree .folder.level-2:eq(1)').trigger('click');
+
+                $('#vls-gf-gallery-tree .folder.level-1:eq(0)').trigger('click');
                 setTimeout(function () {
-                    $('#vls-gf-gallery-tree .album.level-3:eq(0)').trigger('click');
-
+                    $('#vls-gf-gallery-tree .folder.level-2:eq(1)').trigger('click');
                     setTimeout(function () {
+                        $('#vls-gf-gallery-tree .album.level-3:eq(0)').trigger('click');
 
-                        var text = 'This is the Main Panel. It displays the currently activated album and provides access to all album-related features.';
-                        setTip('.vls-gf-right-panel', 'l', 200, text, 100);
+                        setTimeout(function () {
 
-                        setFocusOnElement('.vls-gf-right-panel', 0, 0, 0, 0);
+                            var text = 'This is the Main Panel. It displays the currently activated album and provides access to all album-related features.';
+                            setTip('.vls-gf-right-panel', 'l', 200, text, 100);
 
-                        blockNext = false;
+                            setFocusOnElement('.vls-gf-right-panel', 0, 0, 0, 0);
 
-                    }, 1000);
+                            blockNext = false;
+
+                        }, 1000);
+                    }, 600);
                 }, 600);
+
             }, 600);
 
-        }, 600);
+        },
 
-    }
+        //tabs
+        10: function () {
 
-    //tabs
-    function step9() {
+            var text = 'There are three tabs available. Overview tab opens by default when you switch the active album.';
+            setTip('#vls-gf-tab-panel', 'l', 200, text);
 
-        var text = 'There are three tabs available. Overview tab opens by default when you switch the active album.';
-        setTip('#vls-gf-tab-panel', 'l', 200, text);
+            setFocusOnElement('#vls-gf-tab-panel', 0, 0, 0, 0);
 
-        setFocusOnElement('#vls-gf-tab-panel', 0, 0, 0, 0);
+        },
 
-    }
+        //album overview
+        11: function () {
 
-    //album overview
-    function step10() {
-
-        var text = "Overview tab shows all album's images. Here you can upload and delete images, move them between albums and edit image's details.";
-        setTip('.vls-gf-right-panel .vls-gf-tab-view', 'l', 200, text, 100);
-
-        setFocusOnElement('.vls-gf-right-panel .vls-gf-tab-view', 0, 0, 0, 0);
-
-    }
-
-    //click on image to edit or drag to move
-    function step11() {
-
-        var text = 'Click on a thumbnail to open the image details editing dialog. Drag thumbnail to the album in the Albums Panel to move it to another album or to the "Unsorted images" folder.';
-        setTip('.vls-gf-right-panel .vls-gf-image-panel li:eq(0)', 'r', 200, text);
-
-        setFocusOnElement('.vls-gf-right-panel .vls-gf-image-panel li:eq(0)', 0, 0, 0, 0);
-
-    }
-
-    //image upload
-    function step12() {
-
-        var text = 'Upload images to the active album';
-        setTip('#vls-gf-upload-image-button:parent', 'r', 200, text);
-
-        setFocusOnElement('#vls-gf-upload-image-button:parent', 0, 0, 0, 0);
-
-    }
-
-    //bulk select
-    function step13() {
-
-        var text = 'Activate bulk select mode to enable selecting multiple images and moving or deleting them at once.';
-        setTip('#vls-gf-bulk-select-start-button:parent', 'l', 200, text);
-
-        setFocusOnElement('#vls-gf-bulk-select-start-button:parent', 0, 0, 0, 0);
-
-    }
-
-    //bulk select
-    function step14() {
-
-        var text = 'Click this tab to switch to the layout editor for the current album.';
-        setTip('#vls-gf-tab-panel li:eq(1)', 'l', 200, text);
-
-        setFocusOnElement('#vls-gf-tab-panel li:eq(1)', 0, 0, 0, 0);
-
-    }
-
-    //layout tab
-    function step15() {
-
-        blockNext = true;
-
-        $('#vls-gf-tab-panel li:eq(1) a').trigger('click');
-        setTimeout(function () {
-
-            var text = 'Layout tab contains WYSIWYG layout editor fot the current album.';
+            var text = "Overview tab shows all album's images. Here you can upload and delete images, move them between albums and edit image's details.";
             setTip('.vls-gf-right-panel .vls-gf-tab-view', 'l', 200, text, 100);
 
             setFocusOnElement('.vls-gf-right-panel .vls-gf-tab-view', 0, 0, 0, 0);
 
-            blockNext = false;
+        },
 
-        }, 1500);
+        //click on image to edit or drag to move
+        12: function () {
 
-    }
+            var text = 'Click on a thumbnail to open the image details editing dialog. Drag thumbnail to the album in the Albums Panel to move it to another album or to the "Unsorted images" folder.';
+            setTip('.vls-gf-right-panel .vls-gf-image-panel li:eq(0)', 'r', 200, text);
 
-    //options panel
-    function step16() {
+            setFocusOnElement('.vls-gf-right-panel .vls-gf-image-panel li:eq(0)', 0, 0, 0, 0);
 
-        var text = 'Here you can set the layout options. The layout view is updated immediately on the change so you can see the result.';
-        setTip('.vls-gf-tab-view .vls-gf-tab-container-side', 'l', 200, text);
+        },
 
-        setFocusOnElement('.vls-gf-tab-view .vls-gf-tab-container-side', 6, 6, 6, 6);
+        //image upload
+        13: function () {
 
-    }
+            var text = 'Upload images to the active album';
+            setTip('#vls-gf-upload-image-button:parent', 'r', 200, text);
 
-    //layout editor panel
-    function step17() {
+            setFocusOnElement('#vls-gf-upload-image-button:parent', 0, 0, 0, 0);
 
-        var text = "You can move every thumbnail to the desired position by dragging the thumbnail. If layout type 'Metro' is selected, you can also freely change the size of the thumbnail by dragging the resize helpers at the thumbnails' edges";
-        setTip('.vls-gf-tab-view .vls-gf-tab-container-layout', 'l', 200, text, 100);
+        },
 
-        setFocusOnElement('.vls-gf-tab-view .vls-gf-tab-container-layout', 10, 10, 10, 10);
+        //bulk select
+        14: function () {
 
-    }
+            var text = 'Activate bulk select mode to enable selecting multiple images and moving or deleting them at once.';
+            setTip('#vls-gf-bulk-select-start-button:parent', 'l', 200, text);
 
-    function step18() {
+            setFocusOnElement('#vls-gf-bulk-select-start-button:parent', 0, 0, 0, 0);
 
-        var text = 'To switch to the album details click this tab.';
-        setTip('#vls-gf-tab-panel li:eq(2)', 'l', 200, text);
+        },
 
-        setFocusOnElement('#vls-gf-tab-panel li:eq(2)', 0, 0, 0, 0);
+        //bulk select
+        15: function () {
 
-    }
+            var text = 'Click this tab to switch to the layout editor for the current album.';
+            setTip('#vls-gf-tab-panel li:eq(1)', 'l', 200, text);
 
-    //album edit tab
-    function step19() {
+            setFocusOnElement('#vls-gf-tab-panel li:eq(1)', 0, 0, 0, 0);
 
-        blockNext = true;
+        },
 
-        //setFocusOnElement('#vls-gf-tab-panel', 0, 0, 0, 0);
+        //layout tab
+        16: function () {
 
-        $('#vls-gf-tab-panel li:eq(2) a').trigger('click');
-        setTimeout(function () {
+            blockNext = true;
 
-            var text = 'Edit tab contains albums details edit form.';
-            setTip('.vls-gf-right-panel .vls-gf-tab-view', 'l', 200, text, 100);
+            $('#vls-gf-tab-panel li:eq(1) a').trigger('click');
+            setTimeout(function () {
 
-            setFocusOnElement('.vls-gf-right-panel .vls-gf-tab-view', 0, 0, 0, 0);
+                var text = 'Layout tab contains WYSIWYG layout editor for the currently selected album.';
+                setTip('.vls-gf-right-panel .vls-gf-tab-view', 'l', 200, text, 100);
 
-            blockNext = false;
+                setFocusOnElement('.vls-gf-right-panel .vls-gf-tab-view', 0, 0, 0, 0);
 
-        }, 1500);
+                blockNext = false;
 
-    }
+            }, 1500);
+
+        },
+
+        //options panel
+        17: function () {
+
+            var text = 'Here you can set the layout options. The layout view is updated immediately on the change so you can see the result.';
+            setTip('.vls-gf-tab-view .vls-gf-tab-container-side', 'l', 200, text);
+
+            setFocusOnElement('.vls-gf-tab-view .vls-gf-tab-container-side', 6, 6, 6, 6);
+
+        },
+
+        //layout editor panel
+        18: function () {
+
+            var text = "You can move every thumbnail to the desired position by dragging the thumbnail. If layout type 'Metro' is selected, you can also freely change the size of the thumbnail by dragging the resize helpers at the thumbnails' edges";
+            setTip('.vls-gf-tab-view .vls-gf-tab-container-layout', 'l', 200, text, 100);
+
+            setFocusOnElement('.vls-gf-tab-view .vls-gf-tab-container-layout', 10, 10, 10, 10);
+
+        },
+
+        19: function () {
+
+            var text = 'To switch to the album details click this tab.';
+            setTip('#vls-gf-tab-panel li:eq(2)', 'l', 200, text);
+
+            setFocusOnElement('#vls-gf-tab-panel li:eq(2)', 0, 0, 0, 0);
+
+        },
+
+        //album edit tab
+        20: function () {
+
+            blockNext = true;
+
+            $('#vls-gf-tab-panel li:eq(2) a').trigger('click');
+            setTimeout(function () {
+
+                var text = 'Edit tab contains albums details and album-related settings. To save your changes click "Update" button in the top-right corner.';
+                setTip('.vls-gf-right-panel .vls-gf-tab-view', 'l', 200, text, 100);
+
+                setFocusOnElement('.vls-gf-right-panel .vls-gf-tab-view', 0, 0, 0, 0);
+
+                blockNext = false;
+
+            }, 1500);
+
+        },
 
 
-    //shortcode
-    function step20() {
+        //shortcode
+        21: function () {
 
-        var text = "To insert an album to your post or page use the displayed shortcode.";
-        setTip('.vls-gf-right-panel .vls-gf-shortcode', 'l', 200, text);
+            var text = "To insert an album to your post or page use the displayed shortcode. You can also use the Gallery Factory button in TinyMCE editor to insert a shortcode.";
+            setTip('.vls-gf-right-panel .vls-gf-shortcode', 'l', 280, text);
 
-        setFocusOnElement('.vls-gf-right-panel .vls-gf-shortcode', 6, 6, 6, 6);
+            setFocusOnElement('.vls-gf-right-panel .vls-gf-shortcode', 6, 6, 6, 6);
 
-        lastStep();
+            lastStep();
 
-    }
+        }
+    };
 
     function lastStep() {
         $tour.find('#vls-gf-tour-btn-close').remove();

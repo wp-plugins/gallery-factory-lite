@@ -23,7 +23,7 @@
                         </option>
                         <option
                             value="all" <?php echo 'all' == get_option('vls_gf_display_image_info_on_hover') ? 'selected="selected"' : ''; ?>>
-	                        <?php _e( 'Caption & Description', VLS_GF_TEXTDOMAIN ); ?>
+	                        <?php _e( 'Caption & description', VLS_GF_TEXTDOMAIN ); ?>
                         </option>
                     </select>
 

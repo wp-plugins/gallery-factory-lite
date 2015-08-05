@@ -26,9 +26,6 @@ if (!class_exists("VLS_Gallery_Factory_Frontend")) {
             // register shortcodes
             add_shortcode('vls_gf_album', array($this, 'shortcode_handler_vls_gf_album'));
 
-            // enqueue_scripts hook
-            add_action('wp_enqueue_scripts', array($this, 'load_stylesheets'));
-
         }
 
         /**
@@ -157,11 +154,15 @@ if (!class_exists("VLS_Gallery_Factory_Frontend")) {
 
             global $wpdb;
 
+            if ($album_id <= 0) {
+                return '<p><strong>Gallery Factory Error: album ID is not set</strong></p>';
+            }
+
             $album = get_post($album_id);
 
-            //if an album is not found, return
+            //if an album is not found, display the error message
             if ($album === null) {
-                return false;
+                return '<p><strong>Gallery Factory Error: album with ID "' . $album_id . '" not found</strong></p>';
             }
 
             $album_layout_meta = get_post_meta($album_id, '_vls_gf_layout_meta', true);
@@ -214,9 +215,8 @@ if (!class_exists("VLS_Gallery_Factory_Frontend")) {
 
                 $image_post_meta = get_post_meta($image->image_id, '_vls_gf_image_meta', true);
 
-
-                $image->width = $image_post_meta['width'];
-                $image->height = $image_post_meta['height'];
+	            $image->width  = isset( $image_post_meta['preview_width'] ) ? $image_post_meta['preview_width'] : $image_post_meta['width'];
+	            $image->height = isset( $image_post_meta['preview_height'] ) ? $image_post_meta['preview_height'] : $image_post_meta['height'];
 
                 $image_layout_meta = get_post_meta($image->link_id, '_vls_gf_layout_meta', true);
                 $image->col = isset($image_layout_meta['col']) ? $image_layout_meta['col'] : 0;
@@ -224,8 +224,27 @@ if (!class_exists("VLS_Gallery_Factory_Frontend")) {
                 $image->metro_w = isset($image_layout_meta['metro_w']) ? $image_layout_meta['metro_w'] : 1;
                 $image->metro_h = isset($image_layout_meta['metro_h']) ? $image_layout_meta['metro_h'] : 1;
 
+
+	            //replace [url] BB code for url link with the <a> tag
+	            $image->lightbox_caption     = preg_replace( '@\[url=([^]]*)\]([^[]*)\[/url\]@', '<a href=&quot;$1\&quot;>$2</a>', $image->caption );
+	            $image->lightbox_description = preg_replace( '@\[url=([^]]*)\]([^[]*)\[/url\]@', '<a href=&quot;$1\&quot;>$2</a>', $image->description );
+
+                //replace [link_open] BB code for url link with the <a> tag
+                $image->lightbox_caption     = preg_replace( '@\[link_open=([^]]*)\]([^[]*)\[/link_open\]@', '<a href=&quot;$1\&quot; onclick=&quot;window.open(this.href); return false;&quot;>$2</a>', $image->lightbox_caption );
+                $image->lightbox_description = preg_replace( '@\[link_open=([^]]*)\]([^[]*)\[/link_open\]@', '<a href=&quot;$1\&quot; onclick=&quot;window.open(this.href); return false;&quot;>$2</a>', $image->lightbox_description );
+
+
+	            //strip bb-code from the caption
+	            $image->caption     = preg_replace( '@\[url=([^]]*)\]([^[]*)\[/url\]@', '$2', $image->caption );
+	            $image->description = preg_replace( '@\[url=([^]]*)\]([^[]*)\[/url\]@', '$2', $image->description );
+                $image->caption     = preg_replace( '@\[link_open=([^]]*)\]([^[]*)\[/link_open\]@', '$2', $image->caption );
+                $image->description = preg_replace( '@\[link_open=([^]]*)\]([^[]*)\[/link_open\]@', '$2', $image->description );
+
             }
 
+	        if ( empty( $album_layout_meta ) ) {
+		        return "<p><strong>Gallery Factory Error: no layout data found, update the album's layout</strong></p>";
+	        }
 
             if ($album_layout_meta['layout_type'] === 'grid') {
                 return $this->render_album_grid($album, $album_layout_meta, $images);

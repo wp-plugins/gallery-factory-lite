@@ -14,8 +14,20 @@
                     src="<?php echo $image->url_preview_m; ?>"
                     alt="<?php echo $image->alt_text ?>"/>
                 <div class="vls-gf-info-back">
-                    <h2 class="vls-gf-info-caption"><?php echo $image->caption ?></h2>
-                    <div class="vls-gf-info-description"><?php echo $image->description ?></div>
+                    <div class="vls-gf-info-back">
+                        <h2 class="vls-gf-info-caption"
+                            <?php if ( $image->lightbox_caption !== $image->caption ) {
+                                echo ' data-lightbox-caption="' . $image->lightbox_caption . '"';
+                            } ?>>
+                            <?php echo $image->caption ?>
+                        </h2>
+                        <p class="vls-gf-info-description"
+                            <?php if ( $image->lightbox_description !== $image->description ) {
+                                echo ' data-lightbox-description="' . $image->lightbox_description . '"';
+                            } ?>>
+                            <?php echo $image->description ?>
+                        </p>
+                    </div>
                 </div>
             </a>
         </div>

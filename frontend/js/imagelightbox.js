@@ -253,6 +253,18 @@
             return this;
         };
 
+        this.switchNextImage = function () {
+            target = targets.eq(targets.index(target) + 1);
+            if (!target.length) target = targets.eq(0);
+            loadImage('right');
+        };
+
+        this.switchPrevImage = function () {
+            target = targets.eq(targets.index(target) - 1);
+            if (!target.length) target = targets.eq(targets.length - 1);
+            loadImage('left');
+        };
+
         this.quitImageLightbox = function () {
             quitLightbox();
             return this;
@@ -303,9 +315,11 @@
  * Initializing function for Imagelightbox
  */
 jQuery(function ($) {
+
     var activityIndicatorOn = function () {
             $('<div id="imagelightbox-loading"><div></div></div>').appendTo('body');
         },
+
         activityIndicatorOff = function () {
             $('#imagelightbox-loading').remove();
         },
@@ -313,6 +327,7 @@ jQuery(function ($) {
         overlayOn = function () {
             $('<div id="imagelightbox-overlay"></div>').appendTo('body');
         },
+
         overlayOff = function () {
             $('#imagelightbox-overlay').remove();
         },
@@ -326,6 +341,28 @@ jQuery(function ($) {
 
         closeButtonOff = function () {
             $('#imagelightbox-close').remove();
+        },
+
+        arrowsOn = function (instance) {
+            var $arrows = $('<button type="button" class="imagelightbox-arrow imagelightbox-arrow-left"></button><button type="button" class="imagelightbox-arrow imagelightbox-arrow-right"></button>');
+
+            $arrows.appendTo('body');
+
+            $arrows.on('click touchend', function (e) {
+                e.preventDefault();
+
+                if ($(this).hasClass('imagelightbox-arrow-left')) {
+                    instance.switchPrevImage();
+                }
+                else {
+                    instance.switchNextImage();
+                }
+                return false;
+            });
+        },
+
+        arrowsOff = function () {
+            $('.imagelightbox-arrow').remove();
         },
 
         infoOn = function () {
@@ -380,11 +417,13 @@ jQuery(function ($) {
                     });
             }
         },
+
         navigationUpdate = function (selector) {
             var items = $('#imagelightbox-nav a');
             items.removeClass('active');
             items.eq($(selector).filter('[href="' + $('#imagelightbox').attr('src') + '"]').index(selector)).addClass('active');
         },
+
         navigationOff = function () {
             $('#imagelightbox-nav').remove();
         };
@@ -400,8 +439,10 @@ jQuery(function ($) {
                 onStart: function () {
                     overlayOn();
                     closeButtonOn(vlsGfImageLightbox);
+                    arrowsOn(vlsGfImageLightbox);
                 },
                 onEnd: function () {
+                    arrowsOff();
                     infoOff();
                     closeButtonOff();
                     overlayOff();
@@ -412,6 +453,7 @@ jQuery(function ($) {
                     activityIndicatorOn();
                 },
                 onLoadEnd: function () {
+                    $('.imagelightbox-arrow').css('display', 'block');
                     infoOn();
                     activityIndicatorOff();
                 }

@@ -30,7 +30,8 @@ VLS_GF.GalleryManager = (function ($) {
             e.preventDefault();
         });
 
-        VLS_GF.AlbumsPanelModule.init();
+        VLS_GF.NavigationPanelModule.init();
+
 
         //switch once to display unsorted images in the Main Panel
         switchAlbum(state.itemType, state.albumId);
@@ -43,13 +44,14 @@ VLS_GF.GalleryManager = (function ($) {
     function switchAlbum(itemType, albumId, albumName, shortcode) {
 
         if (itemType == 'all_images' || itemType == 'unsorted_images') {
+
             albumId = 0;
             $('#vls-gf-tab-panel').slideUp();
 
             if (itemType == 'all_images') {
-                albumName = 'All images';
+                albumName = vlsGfGalleryAdminData.l10n.strAllImages;
             } else if (itemType == 'unsorted_images') {
-                albumName = 'Unsorted images';
+                albumName = vlsGfGalleryAdminData.l10n.strUnsortedImages;
             }
 
             $('.vls-gf-window-title > .vls-gf-shortcode').css('display', 'none').find('input').val('');
@@ -57,7 +59,6 @@ VLS_GF.GalleryManager = (function ($) {
         } else {
 
             $('#vls-gf-tab-panel').slideDown();
-
             $('.vls-gf-window-title .vls-gf-shortcode').css('display', '').find('input').val(shortcode);
 
         }
@@ -131,13 +132,13 @@ VLS_GF.GalleryManager = (function ($) {
     /**
      * Shows confirm dialog with given message, action text and action function
      */
-    function showConfirmDialog(message, actionText, actionFunction) {
+    function showConfirmDialog(header, message, actionText, actionFunction) {
 
         var $dialog = dialogPopupView();
         var $window = $dialog.find('.vls-gf-window');
 
         //header panel
-        $window.append('<div class="vls-gf-title"><span>Confirm delete</span></div>');
+        $window.append('<div class="vls-gf-title"><span>' + header + '</span></div>');
 
         var $content = $('<div class="vls-gf-content"></div>');
         $window.append($content);
@@ -175,17 +176,17 @@ VLS_GF.GalleryManager = (function ($) {
         var inputLabel = '';
 
         if (action === 'rename') {
-            title = 'Rename item';
-            actionButtonText = 'Rename';
-            inputLabel = 'New name';
+            title = vlsGfGalleryAdminData.l10n.strRenameHeader;
+            actionButtonText = vlsGfGalleryAdminData.l10n.strRenameAction;
+            inputLabel = vlsGfGalleryAdminData.l10n.strRenameLabel;
         } else if (action === 'createFolder') {
-            title = 'New folder';
-            actionButtonText = 'Create';
-            inputLabel = 'Folder name';
+            title = vlsGfGalleryAdminData.l10n.strCreateFolderHeader;
+            actionButtonText = vlsGfGalleryAdminData.l10n.strCreateFolderAction;
+            inputLabel = vlsGfGalleryAdminData.l10n.strCreateFolderLabel;
         } else if (action === 'createAlbum') {
-            title = 'New album';
-            actionButtonText = 'Create';
-            inputLabel = 'Album name';
+            title = vlsGfGalleryAdminData.l10n.strCreateAlbumHeader;
+            actionButtonText = vlsGfGalleryAdminData.l10n.strCreateAlbumAction;
+            inputLabel = vlsGfGalleryAdminData.l10n.strCreateAlbumLabel;
         }
 
         var $dialog = dialogPopupView();
@@ -197,7 +198,6 @@ VLS_GF.GalleryManager = (function ($) {
         //content
         var $content = $('<div class="vls-gf-content"></div>');
         $window.append($content);
-
 
         //input field
         $content.append('<label class="vls-gf-form-element"><span>' + inputLabel + '</span><input type="text" value="" /></label>');
@@ -231,158 +231,6 @@ VLS_GF.GalleryManager = (function ($) {
     }
 
 
-    /**
-     * Shows image details dialog
-     */
-    //TODO: move to overview module
-    function showImageDetailsDialog(imageId, linkId, images, links) {
-
-        var dialog = dialogPopupView();
-        dialog.data('vlsGfImages', images);
-        dialog.data('vlsGfLinks', links);
-        dialog.data('vlsGfCurrentImage', imageId);
-        $('#wpwrap').append(dialog);
-
-        //creating window view
-        var view = dialog.find('.vls-gf-window');
-        view.css({'width': '680px', 'margin-left': '-340px'});
-
-        //title
-        var title = $('<div />').addClass('vls-gf-title').append($('<span/>').text(vlsGfGalleryAdminData.l10n.strImageDetails));
-        view.append(title);
-
-        var windowControls = $('<div />').addClass('vls-gf-window-controls');
-        title.append(windowControls);
-
-
-        //next button
-        var prevButton = $('<button/>').addClass('vls-gf-btn-prev').text('<');
-        prevButton.on('click.vls-gf', prevImageDetails);
-        windowControls.append(prevButton);
-
-        //previous button
-        var nextButton = $('<button/>').addClass('vls-gf-btn-next').text('>');
-        nextButton.on('click.vls-gf', nextImageDetails);
-        windowControls.append(nextButton);
-
-        //cancel button
-        var cancelButton = $('<button/>').addClass('vls-gf-btn-cancel').text('×');
-        cancelButton.on('click.vls-gf', closePopup);
-        windowControls.append(cancelButton);
-
-        //container
-        view.append('<div class="vls-gf-content"></div>');
-
-        //buttons panel
-        var buttonsPanel = $('<div class="vls-gf-buttons-panel"><span class="vls-gf-update-feedback">saved</span></div>');
-        view.append(buttonsPanel);
-
-        //save button
-        var actionButton = $('<a class="button-primary" href="#">' + vlsGfGalleryAdminData.l10n.btnSave + '</a>');
-        actionButton.on('click.vls-gf', saveImageDetails);
-        buttonsPanel.append(actionButton);
-
-        loadImageDetailsView(dialog, imageId, linkId);
-
-    }
-
-    function prevImageDetails() {
-
-
-        var dialog = $(this).closest('.vls-gf-modal');
-
-        if (dialog.hasClass('vls-gf-busy')) {
-            return false;
-        }
-
-        var images = dialog.data('vlsGfImages');
-        var links = dialog.data('vlsGfLinks');
-        var currentImage = dialog.data('vlsGfCurrentImage');
-        var currentIndex = images.indexOf(currentImage);
-        if (currentIndex > 0) {
-            currentIndex--;
-            dialog.data('vlsGfCurrentImage', images[currentIndex]);
-            loadImageDetailsView(dialog, images[currentIndex], links[currentIndex]);
-        }
-
-    }
-
-    function nextImageDetails() {
-
-        var dialog = $(this).closest('.vls-gf-modal');
-
-        if (dialog.hasClass('vls-gf-busy')) {
-            return false;
-        }
-
-        var images = dialog.data('vlsGfImages');
-        var links = dialog.data('vlsGfLinks');
-        var currentImage = dialog.data('vlsGfCurrentImage');
-        var currentIndex = images.indexOf(currentImage);
-        if (currentIndex < images.length - 1) {
-            currentIndex++;
-            dialog.data('vlsGfCurrentImage', images[currentIndex]);
-            loadImageDetailsView(dialog, images[currentIndex], links[currentIndex]);
-        }
-
-    }
-
-    function loadImageDetailsView(dialog, imageId, linkId) {
-
-        dialog.addClass('vls-gf-busy');
-
-        //getting dialog contents and appending them to the dialog
-        $.getJSON(
-            ajaxurl,
-            {
-                action: 'vls_gf_view_image_details',
-                image_id: imageId,
-                link_id: linkId
-            },
-            function (data) {
-                dialog.find('.vls-gf-content').empty().append(data.view);
-                var window = dialog.find('.vls-gf-window');
-                window.css('margin-top', 0 - window.height() / 2);
-                dialog.removeClass('vls-gf-busy');
-            }
-        );
-    }
-
-
-    /**
-     * Saves image details
-     */
-    //TODO: move to overview module
-    function saveImageDetails() {
-
-        var $dialog = $('.vls-gf-modal');
-
-        var $button = $dialog.find('.vls-gf-window button.button-primary');
-        if ($button.hasClass('vls-gf-processing')) {
-            return;
-        } else {
-            $button.addClass('vls-gf-processing');
-        }
-
-        var data = {
-            action: 'vls_gf_update_image_details'
-        };
-
-        $dialog.find('.vls-gf-window').find("form input, form select, form textarea").each(function () {
-            data[this.name] = this.value;
-        });
-
-        //sending request to the server
-        $.post(
-            ajaxurl,
-            data,
-            function (data) {
-                $button.removeClass('vls-gf-processing');
-                $dialog.find('.vls-gf-update-feedback').show().fadeOut(3000);
-            }
-        );
-    }
-
     //returning public methods
     return {
         init: init,
@@ -390,15 +238,15 @@ VLS_GF.GalleryManager = (function ($) {
         reloadTab: reloadTab,
         showConfirmDialog: showConfirmDialog,
         showNameDialog: showNameDialog,
-        showImageDetailsDialog: showImageDetailsDialog,
         closePopup: closePopup
     };
 
 })(jQuery);
 
-VLS_GF.AlbumsPanelModule = (function ($) {
+VLS_GF.NavigationPanelModule = (function ($) {
 
-    var albumTree,
+    var navigationPanel,
+        albumTree,
         albumTreeDraggingState = {
             $draggedItem: null,
             $draggingGhost: $('<div class="dragging-ghost"><div></div></div>'),
@@ -418,28 +266,32 @@ VLS_GF.AlbumsPanelModule = (function ($) {
      */
     function init() {
 
-        $('.vls-gf-gallery-manager-container .left-panel ul.fixed-items a').on('click.vls-gf', function (e) {
+        navigationPanel = $('.vls-gf-gallery-manager-container .vls-gf-navigation-panel');
+        albumTree = $('#vls-gf-gallery-tree');
+
+        navigationPanel.find('ul.vls-gf-fixed-items a').on('click.vls-gf touchend.vls-gf', function (e) {
 
             var $this = $(this);
 
-            $('.vls-gf-gallery-manager-container .left-panel ul>li>span.wp-ui-highlight').remove();
+
+            navigationPanel.find('ul>li>span.wp-ui-highlight').remove();
             $this.parent().append('<span class="wp-ui-highlight">');
 
             var item_type = $this.attr('href').replace('#', '');
             VLS_GF.GalleryManager.switchAlbum(item_type, 0);
+
             e.preventDefault();
+            return false;
         });
 
-        albumTree = $('#vls-gf-gallery-tree');
-
         // "Edit gallery tree" button
-        $('#vls-gf-btn-edit-gallery-tree').on('click.vls-gf', beginGalleryTreeEdit);
+        $('#vls-gf-btn-edit-gallery-tree').on('click.vls-gf touchend.vls-gf', beginGalleryTreeEdit);
 
         // "Save changes" and "Cancel" buttons
-        $('#vls-gf-btn-gallery-tree-commit, #vls-gf-btn-gallery-tree-cancel').on('click.vls-gf', endGalleryTreeEdit);
+        $('#vls-gf-btn-gallery-tree-commit, #vls-gf-btn-gallery-tree-cancel').on('click.vls-gf touchend.vls-gf', endGalleryTreeEdit);
 
         //add new folder button
-        $('#vls-gf-btn-add-new-folder, #vls-gf-btn-add-new-album').on('click.vls-gf', galleryTreeAddItem);
+        $('#vls-gf-btn-add-new-folder, #vls-gf-btn-add-new-album').on('click.vls-gf touchend.vls-gf', galleryTreeAddItem);
 
         loadGalleryTree();
     }
@@ -795,9 +647,9 @@ VLS_GF.AlbumsPanelModule = (function ($) {
 
             //inserting moved element and all his children before next element, before deleted items or at the end of list
             if (!isPlaced && (
-                (i == items.length && albumTreeDraggingState.nextItemOrder == 99999)
-                || ($item.hasClass('vls-gf-deleted'))
-                || (i < items.length && albumTreeDraggingState.nextItemOrder == parseInt($item.data('vlsGfOrder')))
+                    (i == items.length && albumTreeDraggingState.nextItemOrder == 99999)
+                    || ($item.hasClass('vls-gf-deleted'))
+                    || (i < items.length && albumTreeDraggingState.nextItemOrder == parseInt($item.data('vlsGfOrder')))
                 )) {
 
                 // updating order of the dropped item
@@ -860,9 +712,11 @@ VLS_GF.AlbumsPanelModule = (function ($) {
             if ($this.hasClass('folder')) {
                 toggleGalleryFolder($this);
             } else if ($this.hasClass('album')) {
-                $('.vls-gf-gallery-manager-container .left-panel ul>li>span.wp-ui-highlight').remove();
-                $this.append('<span class="wp-ui-highlight">');
-                VLS_GF.GalleryManager.switchAlbum('album', $this.data('vlsGfId'), $this.find('.label').text(), $this.data('vlsGfShortcode'));
+                if ($this.data('vlsGfId') > 0) {
+                    navigationPanel.find('.wp-ui-highlight').remove();
+                    $this.append('<span class="wp-ui-highlight">');
+                    VLS_GF.GalleryManager.switchAlbum('album', $this.data('vlsGfId'), $this.find('.vls-gf-label').text(), $this.data('vlsGfShortcode'));
+                }
             }
         }
         return false;
@@ -883,7 +737,7 @@ VLS_GF.AlbumsPanelModule = (function ($) {
                 alert('Name must be entered');
             } else {
 
-                renameCaller.find('.label').text(itemName);
+                renameCaller.find('.vls-gf-label').text(itemName);
                 renameCaller.data('vlsGfIsRenamed', 'true').attr('data-vls-gf-is-renamed', 'true');
 
                 VLS_GF.GalleryManager.closePopup();
@@ -930,7 +784,7 @@ VLS_GF.AlbumsPanelModule = (function ($) {
                     );
                 }
 
-                var $newItem = $('<li class="' + itemType + ' level-1"><a href="#"><span class="icon"></span><span class="label">' + itemName + '</span></a><span class="btn btn-delete"></span><span class="btn btn-rename"></span></li>');
+                var $newItem = $('<li class="' + itemType + ' level-1"><a href="#"><span class="vls-gf-icon"></span><span class="vls-gf-label">' + itemName + '</span></a><span class="btn btn-delete"></span><span class="btn btn-rename"></span></li>');
 
                 $newItem
                     .data('vlsGfId', 0).attr('data-vls-gf-id', 0)
@@ -942,8 +796,8 @@ VLS_GF.AlbumsPanelModule = (function ($) {
 
                 albumTree.append($newItem);
                 $newItem.bind('click.vls-gf', galleryTreeItemClick);
-                $newItem.find('.btn-rename').on('click.vls-gf', galleryTreeRenameItem);
-                $newItem.find('.btn-delete').on('click.vls-gf', galleryTreeDeleteItem);
+                $newItem.find('.btn-rename').on('click.vls-gf touchend.vls-gf', galleryTreeRenameItem);
+                $newItem.find('.btn-delete').on('click.vls-gf touchend.vls-gf', galleryTreeDeleteItem);
 
                 initGalleryTreeDraggable();
 
@@ -965,46 +819,51 @@ VLS_GF.AlbumsPanelModule = (function ($) {
         var $item = $(this).closest('li');
 
         if ($item.hasClass('album')) {
-            messageText = 'Delete album "' + $item.find('.label').text() + '"?';
+            messageText = vlsGfGalleryAdminData.l10n.strConfirmDeleteAlbumMessage.replace('%1$s', $item.find('.vls-gf-label').text());
         } else {
-            messageText = 'Delete folder "' + $item.find('.label').text() + '" and all its descendants?';
+            messageText = vlsGfGalleryAdminData.l10n.strConfirmDeleteFolderMessage.replace('%1$s', $item.find('.vls-gf-label').text());
         }
 
-        VLS_GF.GalleryManager.showConfirmDialog(messageText, 'Delete', function () {
+        VLS_GF.GalleryManager.showConfirmDialog(
+            vlsGfGalleryAdminData.l10n.strConfirmDeleteHeader,
+            messageText,
+            vlsGfGalleryAdminData.l10n.strDeleteFolderAction,
+            function () {
 
-            var deletedLevel = 0;
+                var deletedLevel = 0;
 
-            albumTree.find('li').not('.vls-gf-deleted')
-                .sort(function (a, b) {
-                    return (parseInt($(a).data('vlsGfOrder')) - parseInt($(b).data('vlsGfOrder')));
-                }).each(function () {
-                    var $this = $(this);
-                    if ($this.is($item)) {
-                        deletedLevel = parseInt($this.data('vlsGfLevel'));
-                    } else if (deletedLevel > 0) {
-                        var level = parseInt($this.data('vlsGfLevel'));
-                        if (level > deletedLevel) {
-                            $this.addClass('vls-gf-deleted')
-                                .data('vlsGfLevel', level - deletedLevel + 1).attr('data-vls-gf-level', level - deletedLevel + 1)
-                                .data('vlsGfPosition', 99999).attr('data-vls-gf-position', 99999);
-                        } else {
-                            return false;
+                albumTree.find('li').not('.vls-gf-deleted')
+                    .sort(function (a, b) {
+                        return (parseInt($(a).data('vlsGfOrder')) - parseInt($(b).data('vlsGfOrder')));
+                    }).each(function () {
+                        var $this = $(this);
+                        if ($this.is($item)) {
+                            deletedLevel = parseInt($this.data('vlsGfLevel'));
+                        } else if (deletedLevel > 0) {
+                            var level = parseInt($this.data('vlsGfLevel'));
+                            if (level > deletedLevel) {
+                                $this.addClass('vls-gf-deleted')
+                                    .data('vlsGfLevel', level - deletedLevel + 1).attr('data-vls-gf-level', level - deletedLevel + 1)
+                                    .data('vlsGfPosition', 99999).attr('data-vls-gf-position', 99999);
+                            } else {
+                                return false;
+                            }
                         }
-                    }
-                });
+                    });
 
-            $item.addClass('vls-gf-deleted')
-                .data('vlsGfLevel', 1).attr('data-vls-gf-level', 1)
-                .data('vlsGfIsDeleted', 'true').attr('data-vls-gf-is-deleted', 'true')
-                .data('vlsGfPosition', 99999).attr('data-vls-gf-position', 99999);
+                $item.addClass('vls-gf-deleted')
+                    .data('vlsGfLevel', 1).attr('data-vls-gf-level', 1)
+                    .data('vlsGfIsDeleted', 'true').attr('data-vls-gf-is-deleted', 'true')
+                    .data('vlsGfPosition', 99999).attr('data-vls-gf-position', 99999);
 
-            updateGalleryTreeLayout();
+                updateGalleryTreeLayout();
 
-            VLS_GF.GalleryManager.closePopup();
+                VLS_GF.GalleryManager.closePopup();
 
-            return false;
+                return false;
 
-        });
+            }
+        );
 
         return false;
     }
@@ -1020,6 +879,7 @@ VLS_GF.AlbumsPanelModule = (function ($) {
         }
 
         //Showing edit buttons, hiding edit list button
+        navigationPanel.addClass('vls-gf-edit-mode');
         $(this).css('display', 'none');
         $('#vls-gf-panel-edit-gallery-tree').css('display', 'block');
 
@@ -1027,8 +887,8 @@ VLS_GF.AlbumsPanelModule = (function ($) {
 
         var $item = albumTree.find('li');
         $item.append('<span class="btn btn-delete"></span><span class="btn btn-rename"></span>');
-        $item.find('.btn-rename').on('click.vls-gf', galleryTreeRenameItem);
-        $item.find('.btn-delete').on('click.vls-gf', galleryTreeDeleteItem);
+        $item.find('.btn-rename').on('click.vls-gf touchend.vls-gf', galleryTreeRenameItem);
+        $item.find('.btn-delete').on('click.vls-gf touchend.vls-gf', galleryTreeDeleteItem);
 
         initGalleryTreeDraggable();
 
@@ -1049,6 +909,8 @@ VLS_GF.AlbumsPanelModule = (function ($) {
         $('#vls-gf-btn-edit-gallery-tree').css('display', 'block');
 
         albumTree.append('<div class="vls-gf-loading-overlay"><span></span></div>');
+
+        navigationPanel.removeClass('vls-gf-edit-mode');
 
         //committing changes to server
         if (e.target.id == 'vls-gf-btn-gallery-tree-commit') {
@@ -1083,7 +945,7 @@ VLS_GF.AlbumsPanelModule = (function ($) {
                 }
 
                 if (isAdded || isRenamed) {
-                    name = $item.find('.label').text();
+                    name = $item.find('.vls-gf-label').text();
                 }
 
                 itemData.push({
@@ -1416,7 +1278,7 @@ VLS_GF.AlbumOverviewPanelModule = (function ($) {
                     var linkId = $(this).data('vlsGfLinkId');
                     links.push(parseInt(linkId == undefined ? 0 : linkId));
                 });
-                VLS_GF.GalleryManager.showImageDetailsDialog(imageId, linkId, images, links);
+                VLS_GF.ImageDetailsModule.showImageDetailsDialog(imageId, linkId, images, links);
             }
 
             e.preventDefault();
@@ -1464,7 +1326,7 @@ VLS_GF.AlbumOverviewPanelModule = (function ($) {
      * Fires on start dragging an image
      */
     function imagesToAlbumDragStart() {
-        $('.left-panel').addClass('drop-ready');
+        $('.vls-gf-gallery-manager-container .vls-gf-navigation-panel').addClass('drop-ready');
         $(this).addClass('dragging-image');
     }
 
@@ -1473,7 +1335,7 @@ VLS_GF.AlbumOverviewPanelModule = (function ($) {
      */
     function imagesToAlbumDragStop() {
 
-        $('.left-panel').removeClass('drop-ready');
+        $('.vls-gf-gallery-manager-container .vls-gf-navigation-panel').removeClass('drop-ready');
         $(this).removeClass('dragging-image');
 
         //if not in bulk select mode, remove 'selected' class from dragged image
@@ -1498,7 +1360,8 @@ VLS_GF.AlbumLayoutPanelModule = (function ($) {
             centerShift: {x: 0, y: 0},
             originalState: {width: 1, height: 1, col: 0, row: 0},
             position: {x: 0, y: 0}, // position of the edited item's center (top left cell)
-            currentArea: {col: 0, row: 0, left: 0, right: 0, top: 0, bottom: 0} //boundaries of the current area (image area + spacing)
+            currentArea: {col: 0, row: 0, left: 0, right: 0, top: 0, bottom: 0}, //boundaries of the current area (image area + spacing)
+            itemsList: []
         },
         tabView,
         layoutPanel,
@@ -1588,49 +1451,17 @@ VLS_GF.AlbumLayoutPanelModule = (function ($) {
             scroll: true,
             cursor: 'move',
             addClasses: false,
-            start: function (event, ui) {
-
-                var $this = $(this);
-
-                imageDraggingPlaceholder.css({
-                    width: $this.css('width'),
-                    height: $this.css('height'),
-                    top: $this.css('top'),
-                    left: $this.css('left')
-                });
-
-                layoutPanel.append(imageDraggingPlaceholder);
-                imageDraggingPlaceholder.fadeIn(300);
-
-                if ($this.data('vlsGfMetroW')) {
-                    layoutEditState.metroSize.width = parseInt($this.data('vlsGfMetroW'));
-                } else {
-                    layoutEditState.metroSize.width = 1;
-                }
-                if ($this.data('vlsGfMetroH')) {
-                    layoutEditState.metroSize.height = parseInt($this.data('vlsGfMetroH'));
-                } else {
-                    layoutEditState.metroSize.height = 1;
-                }
-
-                layoutEditState.centerShift = {
-                    x: Math.ceil(layoutViewSetup.cellWidth / 2),
-                    y: Math.ceil(layoutViewSetup.cellHeight / 2)
-                };
-                layoutEditState.position = {x: ui.position.left, y: ui.position.top};
-
-                layoutEditState.editedItem = $this;
-
-                imageItemDrag(event, ui);
-
-            },
+            start: imageItemDragStart,
             drag: imageItemDrag,
             stop: function (event, ui) {
                 imageDraggingPlaceholder.fadeOut(500, function () {
                     $(this).detach()
                 });
                 layoutEditState.editedItem = null;
+
+                populateItemList();
                 updateLayout();
+
             }
         })
 
@@ -1669,7 +1500,7 @@ VLS_GF.AlbumLayoutPanelModule = (function ($) {
         layoutViewSetup.cellWidth = Math.floor((layoutViewSetup.viewportWidth - layoutViewSetup.horizontalSpacing * (layoutSetup.columnCount - 1)) / layoutSetup.columnCount);
         layoutViewSetup.cellHeight = Math.floor(layoutViewSetup.cellWidth / layoutSetup.aspectRatio);
 
-
+        populateItemList();
         updateLayout();
 
     }
@@ -1773,7 +1604,49 @@ VLS_GF.AlbumLayoutPanelModule = (function ($) {
     }
 
     /**
-     * Fires on starting item drag
+     * Fires on item drag start
+     */
+    function imageItemDragStart(event, ui) {
+
+        var $this = $(this);
+
+        imageDraggingPlaceholder.css({
+            width: $this.css('width'),
+            height: $this.css('height'),
+            top: $this.css('top'),
+            left: $this.css('left')
+        });
+
+        layoutPanel.append(imageDraggingPlaceholder);
+        imageDraggingPlaceholder.fadeIn(300);
+
+        if ($this.data('vlsGfMetroW')) {
+            layoutEditState.metroSize.width = parseInt($this.data('vlsGfMetroW'));
+        } else {
+            layoutEditState.metroSize.width = 1;
+        }
+        if ($this.data('vlsGfMetroH')) {
+            layoutEditState.metroSize.height = parseInt($this.data('vlsGfMetroH'));
+        } else {
+            layoutEditState.metroSize.height = 1;
+        }
+
+        layoutEditState.centerShift = {
+            x: Math.ceil(layoutViewSetup.cellWidth / 2),
+            y: Math.ceil(layoutViewSetup.cellHeight / 2)
+        };
+        layoutEditState.position = {x: ui.position.left, y: ui.position.top};
+
+        layoutEditState.editedItem = $this;
+
+        populateItemList();
+
+        imageItemDrag(event, ui);
+
+    }
+
+    /**
+     * Fires on item dragging
      */
     function imageItemDrag(event, ui) {
 
@@ -1856,7 +1729,8 @@ VLS_GF.AlbumLayoutPanelModule = (function ($) {
 
         layoutEditState.editedItem = $this;
 
-        imageItemDrag(event, ui);
+        populateItemList();
+        imageItemResize(event, ui);
 
     }
 
@@ -1904,6 +1778,7 @@ VLS_GF.AlbumLayoutPanelModule = (function ($) {
             $(this).detach()
         });
         layoutEditState.editedItem = null;
+        populateItemList();
         updateLayout();
     }
 
@@ -1929,39 +1804,12 @@ VLS_GF.AlbumLayoutPanelModule = (function ($) {
      */
     function updateLayoutMetro() {
 
-        var items = [];
+        var items = layoutEditState.itemsList;
         var posX = 0, posY = 0;
         var i, a, b, ok;
         var occupiedCells = [], firstFreeCell = {row: 0, col: 0}, currentCell = {row: 0, col: 0};
         var maxRow = 0;
 
-        // populating items list
-        layoutPanel.find('li').each(function () {
-            var $item = $(this);
-            var col = 0, row = 0, width = 1, height = 1;
-
-            // skipping currently dragged item from the main loop
-            if (!layoutEditState.editedItem || !($item.hasClass('ui-draggable-dragging') || $item.hasClass('ui-resizable-resizing'))) {
-                if ($item.data('vlsGfCol')) {
-                    col = parseInt($item.data('vlsGfCol'));
-                }
-                if ($item.data('vlsGfRow')) {
-                    row = parseInt($item.data('vlsGfRow'));
-                }
-                if ($item.data('vlsGfMetroW')) {
-                    width = parseInt($item.data('vlsGfMetroW'));
-                }
-                if ($item.data('vlsGfMetroH')) {
-                    height = parseInt($item.data('vlsGfMetroH'));
-                }
-                items.push({element: $item, row: row, col: col, width: width, height: height});
-            }
-        });
-
-        // sorting items by their position
-        items.sort(function (a, b) {
-            return (a.row * 100 + a.col - b.row * 100 - b.col );
-        });
 
         //if now we are dragging or resizing an item, then calculate its position and reserve correspondent cells
         if (layoutEditState.editedItem) {
@@ -2268,13 +2116,48 @@ VLS_GF.AlbumLayoutPanelModule = (function ($) {
 
     }
 
+    function populateItemList() {
+
+        var items = [];
+
+        // populating items list
+        layoutPanel.find('li').each(function () {
+            var $item = $(this);
+            var col = 0, row = 0, width = 1, height = 1;
+
+            // skipping currently dragged item from the main loop
+            if (!layoutEditState.editedItem || !($item.hasClass('ui-draggable-dragging') || $item.hasClass('ui-resizable-resizing'))) {
+                if ($item.data('vlsGfCol')) {
+                    col = parseInt($item.data('vlsGfCol'));
+                }
+                if ($item.data('vlsGfRow')) {
+                    row = parseInt($item.data('vlsGfRow'));
+                }
+                if ($item.data('vlsGfMetroW')) {
+                    width = parseInt($item.data('vlsGfMetroW'));
+                }
+                if ($item.data('vlsGfMetroH')) {
+                    height = parseInt($item.data('vlsGfMetroH'));
+                }
+                items.push({element: $item, row: row, col: col, width: width, height: height});
+            }
+        });
+
+        // sorting items by their position
+        items.sort(function (a, b) {
+            return (a.row * 100 + a.col - b.row * 100 - b.col );
+        });
+
+        layoutEditState.itemsList = items;
+
+    }
+
 //returning public methods
     return {
         loadContent: loadContent
     };
 
-})
-(jQuery);
+})(jQuery);
 
 VLS_GF.ItemEditPanelModule = (function ($) {
 
@@ -2350,6 +2233,283 @@ VLS_GF.ItemEditPanelModule = (function ($) {
     //returning public methods
     return {
         loadContent: loadContent
+    };
+
+})(jQuery);
+
+VLS_GF.ImageDetailsModule = (function ($) {
+
+    var view,
+        overlay,
+        image = {
+            width: 0,
+            height: 0
+        },
+        crop = { // in percents
+            top: 0,
+            right: 0,
+            bottom: 0,
+            left: 0
+        },
+        cropChanged = false;
+
+    /**
+     * Shows image details dialog
+     */
+    //TODO: move to overview module
+    function showImageDetailsDialog(imageId, linkId, images, links) {
+
+        var dialog = $('<div class="vls-gf-modal"><div class="vls-gf-backdrop"></div><div class="vls-gf-image-details-dialog"></div></div>');
+        dialog.data('vlsGfImages', images).data('vlsGfLinks', links).data('vlsGfCurrentImage', imageId);
+        $('#wpwrap').append(dialog);
+
+        //creating window view
+        view = dialog.find('.vls-gf-image-details-dialog');
+
+
+        //title
+        var title = $('<div />').addClass('vls-gf-title').append($('<span/>').text(vlsGfGalleryAdminData.l10n.strImageDetails));
+        view.append(title);
+
+        var windowControls = $('<div />').addClass('vls-gf-window-controls');
+        title.append(windowControls);
+
+
+        //next button
+        var prevButton = $('<button/>').addClass('vls-gf-btn-prev').text('<');
+        prevButton.on('click.vls-gf', prevImageDetails);
+        windowControls.append(prevButton);
+
+        //previous button
+        var nextButton = $('<button/>').addClass('vls-gf-btn-next').text('>');
+        nextButton.on('click.vls-gf', nextImageDetails);
+        windowControls.append(nextButton);
+
+        //close button
+        var cancelButton = $('<button/>').addClass('vls-gf-btn-cancel').text('×');
+        cancelButton.on('click.vls-gf', closeDialog);
+        windowControls.append(cancelButton);
+
+        //container
+        view.append('<div class="vls-gf-content"></div>');
+
+        loadImageDetailsView(imageId, linkId);
+
+    }
+
+    function prevImageDetails() {
+
+
+        var dialog = $(this).closest('.vls-gf-modal');
+
+        if (dialog.hasClass('vls-gf-busy')) {
+            return false;
+        }
+
+        var images = dialog.data('vlsGfImages');
+        var links = dialog.data('vlsGfLinks');
+        var currentImage = dialog.data('vlsGfCurrentImage');
+        var currentIndex = images.indexOf(currentImage);
+        if (currentIndex > 0) {
+            currentIndex--;
+            dialog.data('vlsGfCurrentImage', images[currentIndex]);
+            loadImageDetailsView(images[currentIndex], links[currentIndex]);
+        }
+
+    }
+
+    function nextImageDetails() {
+
+        var dialog = $(this).closest('.vls-gf-modal');
+
+        if (dialog.hasClass('vls-gf-busy')) {
+            return false;
+        }
+
+        var images = dialog.data('vlsGfImages');
+        var links = dialog.data('vlsGfLinks');
+        var currentImage = dialog.data('vlsGfCurrentImage');
+        var currentIndex = images.indexOf(currentImage);
+        if (currentIndex < images.length - 1) {
+            currentIndex++;
+            dialog.data('vlsGfCurrentImage', images[currentIndex]);
+            loadImageDetailsView(images[currentIndex], links[currentIndex]);
+        }
+
+    }
+
+    function loadImageDetailsView(imageId, linkId) {
+
+        view.addClass('vls-gf-busy');
+
+        //getting dialog contents and appending them to the dialog
+        $.getJSON(
+            ajaxurl,
+            {
+                action: 'vls_gf_view_image_details',
+                image_id: imageId,
+                link_id: linkId
+            },
+            function (data) {
+
+                initContent(data);
+
+                view.removeClass('vls-gf-busy');
+
+            }
+        );
+    }
+
+    function initContent(data) {
+
+        view.find('.vls-gf-content').empty().append(data.view);
+
+        overlay = view.find('.vls-gf-image-panel .vls-gf-image-edit-overlay');
+
+
+        //
+        var mask = overlay.find('.vls-gf-crop-mask');
+
+        crop.top = parseFloat(mask.data('vlsGfTop') ? mask.data('vlsGfTop') : 0);
+        crop.right = parseFloat(mask.data('vlsGfRight') ? mask.data('vlsGfRight') : 0);
+        crop.bottom = parseFloat(mask.data('vlsGfBottom') ? mask.data('vlsGfBottom') : 0);
+        crop.left = parseFloat(mask.data('vlsGfLeft') ? mask.data('vlsGfLeft') : 0);
+
+
+        mask.resizable({
+            containment: overlay,
+            handles: 'all',
+            autoHide: false,
+            minHeight: 43,
+            minWidth: 43,
+            stop: function (event, ui) {
+                updateCropData();
+            }
+        });
+
+        mask.draggable({
+            containment: overlay,
+            distance: 2,
+            addClasses: false,
+            cursor: 'move',
+            stop: function (event, ui) {
+                updateCropData();
+            }
+        });
+
+        $(window).on('resize.vls-gf-image-details', function (e) {
+            if (!$(e.target).hasClass('ui-resizable')) {
+                updateOverlaySize();
+            }
+            return false;
+        });
+
+        view.find('.vls-gf-options-panel input.button-primary').on('click.vls-gf', saveImageDetails);
+
+    }
+
+    /**
+     * Saves image details
+     */
+    function saveImageDetails() {
+
+        var $button = view.find('.vls-gf-options-panel input.button-primary');
+        if ($button.hasClass('vls-gf-busy')) {
+            return;
+        } else {
+            $button.addClass('vls-gf-busy');
+        }
+
+        var data = {
+            action: 'vls_gf_update_image_details',
+            crop_top: crop.top,
+            crop_right: crop.right,
+            crop_bottom: crop.bottom,
+            crop_left: crop.left
+        };
+
+        view.find("form input, form select, form textarea").each(function () {
+            if (this.name) {
+                data[this.name] = this.value;
+            }
+        });
+
+
+        //sending request to the server
+        $.post(
+            ajaxurl,
+            data,
+            function (data) {
+                $button.removeClass('vls-gf-busy');
+                view.find('.vls-gf-update-feedback').show().fadeOut(3000);
+            }
+        );
+    }
+
+    /**
+     * Closes popup dialog
+     */
+    function closeDialog() {
+
+        $(window).off('resize.vls-gf-image-details');
+
+        var modal = $('.vls-gf-modal');
+        modal.find('.ui-resizable').resizable('destroy').draggable('destroy');
+        modal.remove();
+
+        //refresh the overview panel
+        if (cropChanged) {
+            VLS_GF.GalleryManager.reloadTab();
+        }
+    }
+
+    function updateOverlaySize() {
+
+        //position the overlay to the image
+        var img = $('.vls-gf-image-details-dialog .vls-gf-image-panel img');
+        var overlay = $('.vls-gf-image-details-dialog .vls-gf-image-panel .vls-gf-image-edit-overlay');
+
+        image.width = img.width();
+        image.height = img.height();
+
+        overlay.css({
+            width: image.width,
+            height: image.height
+        });
+
+        //set mask size and position
+        var mask = overlay.find('.vls-gf-crop-mask');
+
+        mask.css({
+            top: Math.round(image.height * crop.top * 0.01) + 'px',
+            left: Math.round(image.width * crop.left * 0.01) + 'px',
+            width: Math.round(image.width - image.width * crop.left * 0.01 - image.width * crop.right * 0.01) + 'px',
+            height: Math.round(image.height - image.height * crop.top * 0.01 - image.height * crop.bottom * 0.01) + 'px'
+        });
+
+
+    }
+
+    function updateCropData() {
+
+        var cropMask = $('.vls-gf-image-details-dialog .vls-gf-image-panel .vls-gf-crop-mask'),
+            cropOffset = cropMask.position(),
+            cropW = cropMask.width(),
+            cropH = cropMask.height();
+
+        crop.top = cropOffset.top / image.height * 100;
+        crop.right = (image.width - cropOffset.left - cropW) / image.width * 100;
+        crop.bottom = (image.height - cropOffset.top - cropH) / image.height * 100;
+        crop.left = cropOffset.left / image.width * 100;
+
+        cropChanged = true;
+
+    }
+
+    //returning public methods
+    return {
+        showImageDetailsDialog: showImageDetailsDialog,
+        updateOverlaySize: updateOverlaySize
     };
 
 })(jQuery);

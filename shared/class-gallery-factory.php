@@ -1,6 +1,6 @@
 <?php
 /**
- * @package   Gallery_Factory_Lite_Lite
+ * @package   Gallery_Factory_Lite
  * @author    Vilyon Studio <vilyonstudio@gmail.com>
  * @link      http://galleryfactory.vilyon.net
  * @copyright 2015 Vilyon Studio
@@ -27,6 +27,10 @@ if (!class_exists('VLS_Gallery_Factory')) {
 
             // init hook
             add_action('init', array($this, 'init'));
+
+	        // hook loading plugin's textdomain
+	        add_action( 'plugins_loaded', array( $this, 'load_textdomain' ) );
+
 
         }
 
@@ -72,7 +76,7 @@ if (!class_exists('VLS_Gallery_Factory')) {
 	            wp_die();
 
             if (version_compare($GLOBALS['wp_version'], VLS_GF_MINIMUM_WP_VERSION, '<')) {
-                $message = sprintf(esc_html__('Gallery Factory version %1$s requires WordPress %2$s or higher.', 'vls_gallery_factory'), VLS_GF_VERSION, VLS_GF_MINIMUM_WP_VERSION);
+	            $message = sprintf( esc_html__( 'Gallery Factory version %1$s requires WordPress %2$s or higher.', VLS_GF_TEXTDOMAIN ), VLS_GF_VERSION, VLS_GF_MINIMUM_WP_VERSION );
                 wp_die($message);
             }
 
@@ -320,6 +324,14 @@ if (!class_exists('VLS_Gallery_Factory')) {
                 );
             }
         }
+
+
+	    /**
+	     * Loads plugin textdomain.
+	     */
+	    function load_textdomain() {
+		    $result = load_plugin_textdomain( VLS_GF_TEXTDOMAIN, false, 'gallery-factory/languages' );
+	    }
 
         /**
          * Updates database to the current version

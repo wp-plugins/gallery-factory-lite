@@ -1,4 +1,4 @@
-﻿
+﻿﻿
 html {
     /* killing 300ms touch delay in IE */
     -ms-touch-action: manipulation;
@@ -116,11 +116,20 @@ html {
     text-transform: uppercase;
 }
 
+#imagelightbox-info-caption a {
+    color: #fff;
+}
+
+
 #imagelightbox-info-description {
     color: #fff;
     font-size: 16px;
     padding: 0;
     margin: 0;
+}
+
+#imagelightbox-info-description a {
+    color: #fff;
 }
 
 #imagelightbox-overlay,
@@ -130,6 +139,69 @@ html {
     -moz-animation: fade-in .25s linear;
     -o-animation: fade-in .25s linear;
     animation: fade-in .25s linear;
+}
+
+/* navigation arrows */
+.imagelightbox-arrow {
+    width: 3.75em;
+    height: 7.5em;
+    background: none;
+    background-color: transparent;
+    vertical-align: middle;
+    border: none;
+    outline: none;
+    display: none;
+    position: fixed;
+    z-index: 100001;
+    top: 50%;
+    margin-top: -3.75em;
+}
+
+.imagelightbox-arrow:hover {
+    background: none;
+    background-color: transparent;
+}
+
+.imagelightbox-arrow:focus {
+    background: none;
+    background-color: transparent;
+}
+
+.imagelightbox-arrow:before {
+    width: 0;
+    height: 0;
+    border: 1em solid transparent;
+    content: '';
+    display: inline-block;
+    margin-bottom: -0.125em;
+}
+
+.imagelightbox-arrow-left {
+    left: 2.5em;
+}
+
+.imagelightbox-arrow-left:before {
+    border-left: none;
+    border-right-color: rgba(255, 255, 255, 0.60);
+    margin-left: -0.313em;
+}
+
+.imagelightbox-arrow-left:hover:before {
+    border-right-color: #fff;
+}
+
+.imagelightbox-arrow-right {
+    right: 2.5em;
+}
+
+.imagelightbox-arrow-right:before {
+    border-right: none;
+    border-left-color: rgba(255, 255, 255, 0.60);
+    margin-right: -0.313em;
+}
+
+.imagelightbox-arrow-right:hover:before {
+    border-left-color: #fff;
 }
 
 @-webkit-keyframes fade-in {
@@ -174,5 +246,3 @@ html {
         right: 8px;
     }
 }
-
-	

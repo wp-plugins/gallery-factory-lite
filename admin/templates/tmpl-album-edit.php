@@ -37,7 +37,7 @@
                     <option
                         value="caption" <?php echo ("caption" == $item_meta['display_image_info_on_hover']) ? 'selected' : ''; ?>><?php _e('Caption', VLS_GF_TEXTDOMAIN); ?></option>
                     <option
-	                    value="all" <?php echo ( "all" == $item_meta['display_image_info_on_hover'] ) ? 'selected' : ''; ?>><?php _e( 'Caption & Description', VLS_GF_TEXTDOMAIN ); ?></option>
+	                    value="all" <?php echo ( "all" == $item_meta['display_image_info_on_hover'] ) ? 'selected' : ''; ?>><?php _e( 'Caption & description', VLS_GF_TEXTDOMAIN ); ?></option>
                 </select>
             </label>
 

@@ -12,11 +12,20 @@ body.toplevel_page_vls_gf_gallery_manager a:focus {
   -webkit-box-shadow: none;
   box-shadow: none;
 }
+body.toplevel_page_vls_gf_gallery_manager .vls-gf-lite-notice {
+  font-size: 12px;
+  line-height: 16px;
+  padding: 8px 10px 0 240px;
+  text-align: right;
+}
+body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-header {
+  float: left;
+}
 body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container {
   min-width: 747px;
   margin-top: 16px;
 }
-body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .left-panel {
+body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .vls-gf-navigation-panel {
   float: left;
   width: 240px;
   background-color: #fcfcfc;
@@ -24,51 +33,30 @@ body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .lef
   font-size: 14px;
   line-height: 28px;
 }
-body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .left-panel .header {
+body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .vls-gf-navigation-panel .vls-gf-header {
   height: 40px;
   color: #222;
   background-color: #fff;
   border-bottom: 1px solid #e5e5e5;
 }
-body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .left-panel .header span {
-  padding: 0px 16px;
+body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .vls-gf-navigation-panel .vls-gf-header > span {
+  padding: 0 16px;
   line-height: 40px;
   font-size: 16px;
   font-weight: bold;
 }
-body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .left-panel .header a.fold-button {
-  display: none;
-  float: right;
-  margin: 2px 0 0 0;
-  padding: 8px 0 0 0;
-  width: 20px;
-  height: 28px;
-  font: normal normal normal 18px/1 FontAwesome;
-  font-size: 18px;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  color: #888;
-  outline: none;
-  cursor: pointer;
-}
-body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .left-panel .header a.fold-button:before {
-  content: "\f100";
-}
-body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .left-panel .header a.fold-button:hover {
-  color: #444;
-}
-body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .left-panel ul {
+body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .vls-gf-navigation-panel ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .left-panel ul li {
+body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .vls-gf-navigation-panel ul li {
   position: relative;
   margin: 0;
 }
-body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .left-panel ul li a {
+body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .vls-gf-navigation-panel ul li a {
   display: block;
-  padding: 0px 10px;
+  padding: 0 10px;
   text-decoration: none;
   color: #444;
   outline: none;
@@ -77,7 +65,7 @@ body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .lef
   text-overflow: ellipsis;
   -o-text-overflow: ellipsis;
 }
-body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .left-panel ul li a > .icon {
+body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .vls-gf-navigation-panel ul li a > .vls-gf-icon {
   display: inline-block;
   width: 18px;
   font: normal normal normal 14px/1 FontAwesome;
@@ -85,32 +73,35 @@ body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .lef
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
 }
-body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .left-panel ul li .wp-ui-highlight {
+body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .vls-gf-navigation-panel ul li .wp-ui-highlight {
   display: block;
   position: absolute;
   left: 0;
   top: 0;
   bottom: 0;
   width: 4px;
+  -webkit-transition: opacity 300ms ease;
+  -o-transition: opacity 300ms ease;
+  transition: opacity 300ms ease;
 }
-body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .left-panel ul li.drop-ready > a {
+body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .vls-gf-navigation-panel ul li.drop-ready > a {
   -webkit-box-shadow: 0 0 10px 2px #bbbbbb;
   box-shadow: 0 0 10px 2px #bbbbbb;
 }
-body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .left-panel ul li:hover > a {
+body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .vls-gf-navigation-panel ul li:hover > a {
   color: #222;
   background-color: #f5f5f5;
 }
-body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .left-panel ul.fixed-items > li > a {
+body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .vls-gf-navigation-panel ul.vls-gf-fixed-items > li > a {
   font-weight: bold;
 }
-body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .left-panel ul.fixed-items > .all > a > .icon:before {
+body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .vls-gf-navigation-panel ul.vls-gf-fixed-items > .vls-gf-all > a > .vls-gf-icon:before {
   content: "\f0f2";
 }
-body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .left-panel ul.fixed-items > .unsorted > a > .icon:before {
+body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .vls-gf-navigation-panel ul.vls-gf-fixed-items > .vls-gf-unsorted > a > .vls-gf-icon:before {
   content: "\f01c";
 }
-body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .left-panel #vls-gf-gallery-tree {
+body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .vls-gf-navigation-panel #vls-gf-gallery-tree {
   position: relative;
   min-height: 200px;
   border-bottom: 1px solid #e5e5e5;
@@ -118,7 +109,7 @@ body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .lef
   -o-transition: height 500ms ease;
   transition: height 500ms ease;
 }
-body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .left-panel #vls-gf-gallery-tree li {
+body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .vls-gf-navigation-panel #vls-gf-gallery-tree li {
   position: absolute;
   top: 0;
   left: 0;
@@ -128,12 +119,12 @@ body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .lef
   transition: left 500ms ease, top 500ms ease, opacity 400ms ease-out;
   z-index: 10;
 }
-body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .left-panel #vls-gf-gallery-tree li > a {
+body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .vls-gf-navigation-panel #vls-gf-gallery-tree li > a {
   -webkit-transition: padding-left 500ms ease;
   -o-transition: padding-left 500ms ease;
   transition: padding-left 500ms ease;
 }
-body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .left-panel #vls-gf-gallery-tree li > .btn {
+body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .vls-gf-navigation-panel #vls-gf-gallery-tree li > .btn {
   display: block;
   position: absolute;
   top: 2px;
@@ -146,144 +137,129 @@ body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .lef
   cursor: pointer;
   background-color: transparent;
   border: none;
+  -webkit-transition: opacity 300ms ease;
+  -o-transition: opacity 300ms ease;
+  transition: opacity 300ms ease;
 }
-body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .left-panel #vls-gf-gallery-tree li > .btn:hover {
+body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .vls-gf-navigation-panel #vls-gf-gallery-tree li > .btn:hover {
   color: #222;
 }
-body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .left-panel #vls-gf-gallery-tree li > .btn-rename {
+body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .vls-gf-navigation-panel #vls-gf-gallery-tree li > .btn-rename {
   right: 27px;
 }
-body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .left-panel #vls-gf-gallery-tree li > .btn-rename:before {
+body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .vls-gf-navigation-panel #vls-gf-gallery-tree li > .btn-rename:before {
   content: "\f040";
 }
-body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .left-panel #vls-gf-gallery-tree li > .btn-delete {
+body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .vls-gf-navigation-panel #vls-gf-gallery-tree li > .btn-delete {
   right: 2px;
 }
-body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .left-panel #vls-gf-gallery-tree li > .btn-delete:before {
+body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .vls-gf-navigation-panel #vls-gf-gallery-tree li > .btn-delete:before {
   content: "\f014";
 }
-body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .left-panel #vls-gf-gallery-tree li.folder > a > .icon:before {
+body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .vls-gf-navigation-panel #vls-gf-gallery-tree li.folder > a > .vls-gf-icon:before {
   content: "\f114";
 }
-body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .left-panel #vls-gf-gallery-tree li.folder.opened > a > .icon:before {
+body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .vls-gf-navigation-panel #vls-gf-gallery-tree li.folder.opened > a > .vls-gf-icon:before {
   content: "\f115";
 }
-body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .left-panel #vls-gf-gallery-tree li.album > a > .icon:before {
+body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .vls-gf-navigation-panel #vls-gf-gallery-tree li.album > a > .vls-gf-icon:before {
   content: "\f03e";
 }
-body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .left-panel #vls-gf-gallery-tree li.vls-hidden {
+body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .vls-gf-navigation-panel #vls-gf-gallery-tree li.vls-hidden {
   opacity: 0;
   z-index: 0;
 }
-body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .left-panel #vls-gf-gallery-tree li.vls-gf-deleted {
+body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .vls-gf-navigation-panel #vls-gf-gallery-tree li.vls-gf-deleted {
   display: none;
 }
-body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .left-panel #vls-gf-gallery-tree > li.level-1 {
+body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .vls-gf-navigation-panel #vls-gf-gallery-tree > li.level-1 {
   z-index: 10;
 }
-body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .left-panel #vls-gf-gallery-tree > li.level-1 > a {
+body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .vls-gf-navigation-panel #vls-gf-gallery-tree > li.level-1 > a {
   padding-left: 10px;
 }
-body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .left-panel #vls-gf-gallery-tree > li.level-2 {
+body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .vls-gf-navigation-panel #vls-gf-gallery-tree > li.level-2 {
   z-index: 9;
 }
-body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .left-panel #vls-gf-gallery-tree > li.level-2 > a {
+body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .vls-gf-navigation-panel #vls-gf-gallery-tree > li.level-2 > a {
   padding-left: 20px;
 }
-body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .left-panel #vls-gf-gallery-tree > li.level-3 {
+body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .vls-gf-navigation-panel #vls-gf-gallery-tree > li.level-3 {
   z-index: 8;
 }
-body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .left-panel #vls-gf-gallery-tree > li.level-3 > a {
+body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .vls-gf-navigation-panel #vls-gf-gallery-tree > li.level-3 > a {
   padding-left: 30px;
 }
-body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .left-panel #vls-gf-gallery-tree > li.level-4 {
-  z-index: 7;
-}
-body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .left-panel #vls-gf-gallery-tree > li.level-4 > a {
-  padding-left: 40px;
-}
-body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .left-panel #vls-gf-gallery-tree > li.level-5 {
-  z-index: 6;
-}
-body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .left-panel #vls-gf-gallery-tree > li.level-5 > a {
-  padding-left: 50px;
-}
-body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .left-panel #vls-gf-gallery-tree > li.level-6 {
-  z-index: 5;
-}
-body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .left-panel #vls-gf-gallery-tree > li.level-6 > a {
-  padding-left: 60px;
-}
-body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .left-panel #vls-gf-gallery-tree > li.level-7 {
-  z-index: 4;
-}
-body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .left-panel #vls-gf-gallery-tree > li.level-7 > a {
-  padding-left: 70px;
-}
-body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .left-panel #vls-gf-gallery-tree .dragging-ghost {
+body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .vls-gf-navigation-panel #vls-gf-gallery-tree .dragging-ghost {
   position: absolute;
   height: 28px;
   width: 100%;
   z-index: 0;
 }
-body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .left-panel #vls-gf-gallery-tree .dragging-ghost div {
+body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .vls-gf-navigation-panel #vls-gf-gallery-tree .dragging-ghost div {
   margin: 3px 2px 3px 10px;
   border: 2px dashed #afafaf;
   height: 18px;
 }
-body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .left-panel #vls-gf-gallery-tree .dragging-ghost.level-2 > div {
+body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .vls-gf-navigation-panel #vls-gf-gallery-tree .dragging-ghost.level-2 > div {
   margin-left: 20px;
 }
-body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .left-panel #vls-gf-gallery-tree .dragging-ghost.level-3 > div {
+body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .vls-gf-navigation-panel #vls-gf-gallery-tree .dragging-ghost.level-3 > div {
   margin-left: 30px;
 }
-body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .left-panel #vls-gf-gallery-tree .dragging-ghost.level-4 > div {
+body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .vls-gf-navigation-panel #vls-gf-gallery-tree .dragging-ghost.level-4 > div {
   margin-left: 40px;
 }
-body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .left-panel #vls-gf-gallery-tree .dragging-ghost.level-5 > div {
+body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .vls-gf-navigation-panel #vls-gf-gallery-tree .dragging-ghost.level-5 > div {
   margin-left: 50px;
 }
-body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .left-panel #vls-gf-gallery-tree .dragging-ghost.level-6 > div {
+body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .vls-gf-navigation-panel #vls-gf-gallery-tree .dragging-ghost.level-6 > div {
   margin-left: 60px;
 }
-body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .left-panel #vls-gf-gallery-tree .dragging-ghost.level-7 > div {
+body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .vls-gf-navigation-panel #vls-gf-gallery-tree .dragging-ghost.level-7 > div {
   margin-left: 70px;
 }
-body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .left-panel #vls-gf-gallery-tree .ui-draggable-dragging,
-body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .left-panel #vls-gf-gallery-tree .ui-draggable-placing {
+body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .vls-gf-navigation-panel #vls-gf-gallery-tree .ui-draggable-dragging,
+body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .vls-gf-navigation-panel #vls-gf-gallery-tree .ui-draggable-placing {
   background-color: transparent;
   z-index: 100;
 }
-body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .left-panel #vls-gf-gallery-tree .ui-draggable-dragging > a,
-body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .left-panel #vls-gf-gallery-tree .ui-draggable-placing > a {
+body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .vls-gf-navigation-panel #vls-gf-gallery-tree .ui-draggable-dragging > a,
+body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .vls-gf-navigation-panel #vls-gf-gallery-tree .ui-draggable-placing > a {
   background-color: transparent;
 }
-body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .left-panel #vls-gf-gallery-tree .ui-draggable-dragging > .btn,
-body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .left-panel #vls-gf-gallery-tree .ui-draggable-placing > .btn {
-  display: none;
-}
-body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .left-panel #vls-gf-gallery-tree .ui-draggable-dragging > .wp-ui-highlight,
-body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .left-panel #vls-gf-gallery-tree .ui-draggable-placing > .wp-ui-highlight {
-  display: none;
-}
-body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .left-panel #vls-gf-gallery-tree .ui-draggable-dragging {
+body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .vls-gf-navigation-panel #vls-gf-gallery-tree .ui-draggable-dragging > .btn,
+body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .vls-gf-navigation-panel #vls-gf-gallery-tree .ui-draggable-placing > .btn {
+  opacity: 0;
   -webkit-transition: none;
   -o-transition: none;
   transition: none;
 }
-body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .left-panel #vls-gf-panel-edit-gallery-tree {
-  display: none;
+body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .vls-gf-navigation-panel #vls-gf-gallery-tree .ui-draggable-dragging .wp-ui-highlight,
+body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .vls-gf-navigation-panel #vls-gf-gallery-tree .ui-draggable-placing .wp-ui-highlight {
+  opacity: 0;
+  -webkit-transition: none;
+  -o-transition: none;
+  transition: none;
 }
-body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .left-panel #vls-gf-panel-edit-gallery-tree #vls-gf-btn-add-new-folder,
-body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .left-panel #vls-gf-panel-edit-gallery-tree #vls-gf-btn-add-new-album,
-body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .left-panel #vls-gf-panel-edit-gallery-tree #vls-gf-btn-gallery-tree-cancel {
+body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .vls-gf-navigation-panel #vls-gf-gallery-tree .ui-draggable-dragging {
+  -webkit-transition: none;
+  -o-transition: none;
+  transition: none;
+}
+body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .vls-gf-navigation-panel #vls-gf-panel-edit-gallery-tree {
+  display: none;
+  padding: 8px 10px;
+}
+body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .vls-gf-navigation-panel #vls-gf-panel-edit-gallery-tree #vls-gf-btn-add-new-folder,
+body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .vls-gf-navigation-panel #vls-gf-panel-edit-gallery-tree #vls-gf-btn-add-new-album,
+body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .vls-gf-navigation-panel #vls-gf-panel-edit-gallery-tree #vls-gf-btn-gallery-tree-cancel {
   display: block;
   box-sizing: border-box;
-  float: left;
   height: 26px;
-  width: 105px;
+  width: 100%;
   line-height: 24px;
-  margin: 6px 0 6px 10px;
+  margin: 0 0 8px 0;
   padding: 0 5px 0 0;
   border: 1px solid #e5e5e5;
   font-size: 14px;
@@ -294,9 +270,9 @@ body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .lef
   cursor: pointer;
   outline: none;
 }
-body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .left-panel #vls-gf-panel-edit-gallery-tree #vls-gf-btn-add-new-folder .icon,
-body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .left-panel #vls-gf-panel-edit-gallery-tree #vls-gf-btn-add-new-album .icon,
-body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .left-panel #vls-gf-panel-edit-gallery-tree #vls-gf-btn-gallery-tree-cancel .icon {
+body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .vls-gf-navigation-panel #vls-gf-panel-edit-gallery-tree #vls-gf-btn-add-new-folder .vls-gf-icon,
+body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .vls-gf-navigation-panel #vls-gf-panel-edit-gallery-tree #vls-gf-btn-add-new-album .vls-gf-icon,
+body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .vls-gf-navigation-panel #vls-gf-panel-edit-gallery-tree #vls-gf-btn-gallery-tree-cancel .vls-gf-icon {
   display: inline-block;
   width: 18px;
   font: normal normal normal 14px/1 FontAwesome;
@@ -304,29 +280,33 @@ body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .lef
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
 }
-body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .left-panel #vls-gf-panel-edit-gallery-tree #vls-gf-btn-add-new-folder .icon:before,
-body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .left-panel #vls-gf-panel-edit-gallery-tree #vls-gf-btn-add-new-album .icon:before,
-body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .left-panel #vls-gf-panel-edit-gallery-tree #vls-gf-btn-gallery-tree-cancel .icon:before {
+body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .vls-gf-navigation-panel #vls-gf-panel-edit-gallery-tree #vls-gf-btn-add-new-folder .vls-gf-icon:before,
+body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .vls-gf-navigation-panel #vls-gf-panel-edit-gallery-tree #vls-gf-btn-add-new-album .vls-gf-icon:before,
+body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .vls-gf-navigation-panel #vls-gf-panel-edit-gallery-tree #vls-gf-btn-gallery-tree-cancel .vls-gf-icon:before {
   content: "\f067";
 }
-body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .left-panel #vls-gf-panel-edit-gallery-tree #vls-gf-btn-gallery-tree-commit.button-primary {
+body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .vls-gf-navigation-panel #vls-gf-panel-edit-gallery-tree #vls-gf-btn-gallery-tree-cancel {
+  float: left;
+  width: 105px;
+}
+body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .vls-gf-navigation-panel #vls-gf-panel-edit-gallery-tree #vls-gf-btn-gallery-tree-commit.button-primary {
   display: block;
   float: left;
   height: 26px;
   width: 105px;
   line-height: 24px;
-  margin: 6px 0 6px 10px;
+  margin: 0 10px 8px 0;
   padding: 0 5px 0 0;
   font-size: 14px;
   text-align: center;
   text-decoration: none;
   border-radius: 0 !important;
 }
-body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .left-panel #vls-gf-btn-edit-gallery-tree {
+body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .vls-gf-navigation-panel #vls-gf-btn-edit-gallery-tree {
   display: block;
   height: 24px;
   line-height: 24px;
-  margin: 6px 10px 6px 10px;
+  margin: 8px 10px 8px 10px;
   padding: 0 5px 0 0;
   border: 1px solid #e5e5e5;
   font-size: 14px;
@@ -334,7 +314,7 @@ body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .lef
   color: #222;
   text-decoration: none;
 }
-body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .left-panel #vls-gf-btn-edit-gallery-tree .icon {
+body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .vls-gf-navigation-panel #vls-gf-btn-edit-gallery-tree .vls-gf-icon {
   display: inline-block;
   width: 22px;
   font: normal normal normal 14px/1 FontAwesome;
@@ -342,10 +322,13 @@ body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .lef
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
 }
-body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .left-panel #vls-gf-btn-edit-gallery-tree .icon:before {
+body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .vls-gf-navigation-panel #vls-gf-btn-edit-gallery-tree .vls-gf-icon:before {
   content: "\f040";
 }
-body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .left-panel.drop-ready {
+body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .vls-gf-navigation-panel.vls-gf-edit-mode ul li a {
+  padding: 0 50px 0 10px;
+}
+body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .vls-gf-navigation-panel.drop-ready {
   border: 1px solid #9b9b9b;
   background-color: #fff;
   box-shadow: 0 0 10px 2px #bbbbbb;
@@ -555,6 +538,7 @@ body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .vls
   height: 140px;
   width: 140px;
   background-color: #eaeaea;
+  cursor: pointer;
 }
 body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .vls-gf-right-panel .vls-gf-tab-view .vls-gf-image-panel li a img {
   height: 140px;
@@ -562,8 +546,8 @@ body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .vls
 }
 body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .vls-gf-right-panel .vls-gf-tab-view .vls-gf-image-panel li .image-icon {
   position: absolute;
-  top: 0px;
-  right: 0px;
+  top: 0;
+  right: 0;
   width: 24px;
   height: 24px;
   cursor: pointer;
@@ -599,7 +583,7 @@ body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .vls
   color: #000;
   background-color: #fff;
   border-top: 1px solid #e5e5e5;
-  padding: 0px 10px;
+  padding: 0 10px;
   font-size: 14px;
 }
 body.toplevel_page_vls_gf_gallery_manager .vls-gf-gallery-manager-container .vls-gf-right-panel .vls-gf-tab-view .vls-gf-footer span {
@@ -767,6 +751,7 @@ body.toplevel_page_vls_gf_gallery_manager #vls-gf-image-drag-helper {
   margin-top: 10px;
   display: block;
 }
+.mce-container .vls-gf-loading-overlay,
 .vls-gf-loading-overlay {
   position: absolute;
   top: 0;
@@ -776,6 +761,7 @@ body.toplevel_page_vls_gf_gallery_manager #vls-gf-image-drag-helper {
   background-color: rgba(255, 255, 255, 0.31);
   z-index: 1000;
 }
+.mce-container .vls-gf-loading-overlay span,
 .vls-gf-loading-overlay span {
   display: block;
   position: absolute;
@@ -793,6 +779,7 @@ body.toplevel_page_vls_gf_gallery_manager #vls-gf-image-drag-helper {
   -o-animation: spin 2s infinite linear;
   animation: spin 2s infinite linear;
 }
+.mce-container .vls-gf-loading-overlay span:before,
 .vls-gf-loading-overlay span:before {
   content: "\f110";
 }
@@ -823,7 +810,7 @@ body.toplevel_page_vls_gf_gallery_manager #vls-gf-image-drag-helper {
   left: 0;
   right: 0;
   background: #000;
-  opacity: .7;
+  opacity: .5;
   z-index: 159900;
 }
 .vls-gf-modal .vls-gf-window {
@@ -835,7 +822,7 @@ body.toplevel_page_vls_gf_gallery_manager #vls-gf-image-drag-helper {
   margin-left: -210px;
   background-color: #f2f2f2;
   z-index: 160000;
-  box-shadow: rgba(0, 0, 0, 0.7) 0px 5px 15px 0px;
+  box-shadow: rgba(0, 0, 0, 0.7) 0 5px 15px 0;
 }
 .vls-gf-modal .vls-gf-window .vls-gf-title {
   height: 40px;
@@ -870,7 +857,10 @@ body.toplevel_page_vls_gf_gallery_manager #vls-gf-image-drag-helper {
   color: #444;
 }
 .vls-gf-modal .vls-gf-window .vls-gf-content {
-  padding: 16px 20px 20px 16px;
+  padding: 18px 20px 18px 16px;
+}
+.vls-gf-modal .vls-gf-window .vls-gf-content .vls-gf-form-element span {
+  margin-top: -10px;
 }
 .vls-gf-modal .vls-gf-window .vls-gf-content .vls-gf-message {
   display: block;
@@ -879,25 +869,10 @@ body.toplevel_page_vls_gf_gallery_manager #vls-gf-image-drag-helper {
   vertical-align: middle;
   line-height: 20px;
 }
-.vls-gf-modal .vls-gf-window .vls-gf-content .vls-gf-column-2 {
-  float: left;
-  width: 50%;
-}
-.vls-gf-modal .vls-gf-window .vls-gf-content .vls-gf-info-line strong {
-  font-weight: bold;
-  margin-right: 4px;
-}
-.vls-gf-modal .vls-gf-window .vls-gf-content .vls-gf-divider {
-  position: relative;
-  clear: both;
-  height: 16px;
-  border-bottom: 1px solid #e5e5e5;
-  margin: 128px 6px 10px 6px;
-}
 .vls-gf-modal .vls-gf-window .vls-gf-buttons-panel {
   float: right;
   height: 28px;
-  padding: 0px 20px 20px 20px;
+  padding: 0 20px 20px 20px;
 }
 .vls-gf-modal .vls-gf-window .vls-gf-buttons-panel span.vls-gf-update-feedback {
   display: none;
@@ -920,6 +895,263 @@ body.toplevel_page_vls_gf_gallery_manager #vls-gf-image-drag-helper {
   line-height: 30px;
   margin: 0 0 0 10px;
   padding: 0 14px 0 14px;
+}
+.vls-gf-modal .vls-gf-image-details-dialog {
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  bottom: 30px;
+  left: 30px;
+  background-color: #fff;
+  z-index: 160000;
+  box-shadow: rgba(0, 0, 0, 0.7) 0 5px 15px 0;
+}
+.vls-gf-modal .vls-gf-image-details-dialog .vls-gf-title {
+  height: 40px;
+  line-height: 40px;
+  font-weight: bold;
+  color: #222;
+  background-color: #fff;
+  border-bottom: 1px solid #e5e5e5;
+  font-size: 16px;
+}
+.vls-gf-modal .vls-gf-image-details-dialog .vls-gf-title span {
+  padding: 0 16px;
+}
+.vls-gf-modal .vls-gf-image-details-dialog .vls-gf-title .vls-gf-window-controls {
+  height: 40px;
+  float: right;
+  font-size: 23px;
+}
+.vls-gf-modal .vls-gf-image-details-dialog .vls-gf-title .vls-gf-window-controls button {
+  height: 100%;
+  width: 40px;
+  color: #555;
+  background-color: transparent;
+  border-top: none;
+  border-right: none;
+  border-bottom: none;
+  border-left: 1px solid #e5e5e5;
+  outline: none;
+}
+.vls-gf-modal .vls-gf-image-details-dialog .vls-gf-title .vls-gf-window-controls button:hover {
+  background-color: #f5f5f5;
+  color: #444;
+}
+.vls-gf-modal .vls-gf-image-details-dialog .vls-gf-content {
+  position: absolute;
+  top: 41px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.vls-gf-modal .vls-gf-image-details-dialog .vls-gf-content .vls-gf-image-panel {
+  position: absolute;
+  top: 10px;
+  right: 571px;
+  bottom: 10px;
+  left: 10px;
+  background-color: #fff;
+}
+.vls-gf-modal .vls-gf-image-details-dialog .vls-gf-content .vls-gf-image-panel img {
+  max-width: 100%;
+  max-height: 100%;
+}
+.vls-gf-modal .vls-gf-image-details-dialog .vls-gf-content .vls-gf-image-panel .vls-gf-image-edit-overlay {
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+}
+.vls-gf-modal .vls-gf-image-details-dialog .vls-gf-content .vls-gf-image-panel .vls-gf-image-edit-overlay .vls-gf-crop-mask {
+  position: absolute;
+  background-size: 6px 1px, 6px 1px, 1px 6px, 1px 6px;
+  background-position: 0 0, 0 100%, 0 0, 100% 0;
+  background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
+  -webkit-animation: marching-ants 1s;
+  animation: marching-ants 1s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  background-image: -webkit-linear-gradient(left, #ffffff 50%, #555555 50%), -webkit-linear-gradient(left, #ffffff 50%, #555555 50%), -webkit-linear-gradient(top, #ffffff 50%, #555555 50%), -webkit-linear-gradient(top, #ffffff 50%, #555555 50%);
+  background-image: linear-gradient(to right, #ffffff 50%, #555555 50%), linear-gradient(to right, #ffffff 50%, #555555 50%), linear-gradient(to bottom, #ffffff 50%, #555555 50%), linear-gradient(to bottom, #ffffff 50%, #555555 50%);
+  color: #fff;
+}
+.vls-gf-modal .vls-gf-image-details-dialog .vls-gf-content .vls-gf-image-panel .vls-gf-image-edit-overlay .vls-gf-crop-mask:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  -webkit-box-shadow: 0 0 40px 5000px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 40px 5000px rgba(0, 0, 0, 0.2);
+}
+.vls-gf-modal .vls-gf-image-details-dialog .vls-gf-content .vls-gf-image-panel .vls-gf-image-edit-overlay .vls-gf-crop-mask .vls-gf-resize-helper {
+  display: block;
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background-color: #fff;
+  border: 1px solid #444;
+}
+.vls-gf-modal .vls-gf-image-details-dialog .vls-gf-content .vls-gf-image-panel .vls-gf-image-edit-overlay .vls-gf-crop-mask .vls-gf-resize-helper:nth-of-type(1) {
+  top: 0;
+  left: 50%;
+  margin-left: -3px;
+  cursor: ns-resize;
+}
+.vls-gf-modal .vls-gf-image-details-dialog .vls-gf-content .vls-gf-image-panel .vls-gf-image-edit-overlay .vls-gf-crop-mask .vls-gf-resize-helper:nth-of-type(2) {
+  top: 0;
+  right: 0;
+  cursor: nesw-resize;
+}
+.vls-gf-modal .vls-gf-image-details-dialog .vls-gf-content .vls-gf-image-panel .vls-gf-image-edit-overlay .vls-gf-crop-mask .vls-gf-resize-helper:nth-of-type(3) {
+  top: 50%;
+  right: 0;
+  margin-top: -3px;
+  cursor: ew-resize;
+}
+.vls-gf-modal .vls-gf-image-details-dialog .vls-gf-content .vls-gf-image-panel .vls-gf-image-edit-overlay .vls-gf-crop-mask .vls-gf-resize-helper:nth-of-type(4) {
+  bottom: 0;
+  right: 0;
+  cursor: nwse-resize;
+}
+.vls-gf-modal .vls-gf-image-details-dialog .vls-gf-content .vls-gf-image-panel .vls-gf-image-edit-overlay .vls-gf-crop-mask .vls-gf-resize-helper:nth-of-type(5) {
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+  cursor: ns-resize;
+}
+.vls-gf-modal .vls-gf-image-details-dialog .vls-gf-content .vls-gf-image-panel .vls-gf-image-edit-overlay .vls-gf-crop-mask .vls-gf-resize-helper:nth-of-type(6) {
+  bottom: 0;
+  left: 0;
+  cursor: nesw-resize;
+}
+.vls-gf-modal .vls-gf-image-details-dialog .vls-gf-content .vls-gf-image-panel .vls-gf-image-edit-overlay .vls-gf-crop-mask .vls-gf-resize-helper:nth-of-type(7) {
+  top: 50%;
+  left: 0;
+  margin-top: -3px;
+  cursor: ew-resize;
+}
+.vls-gf-modal .vls-gf-image-details-dialog .vls-gf-content .vls-gf-image-panel .vls-gf-image-edit-overlay .vls-gf-crop-mask .vls-gf-resize-helper:nth-of-type(8) {
+  top: 0;
+  left: 0;
+  cursor: nwse-resize;
+}
+.vls-gf-modal .vls-gf-image-details-dialog .vls-gf-content .vls-gf-image-panel .vls-gf-image-edit-overlay .vls-gf-crop-mask .ui-resizable-handle {
+  position: absolute;
+  border: none;
+}
+.vls-gf-modal .vls-gf-image-details-dialog .vls-gf-content .vls-gf-image-panel .vls-gf-image-edit-overlay .vls-gf-crop-mask .ui-resizable-n {
+  top: -4px;
+  left: 14px;
+  right: 14px;
+  height: 14px;
+  cursor: ns-resize;
+}
+.vls-gf-modal .vls-gf-image-details-dialog .vls-gf-content .vls-gf-image-panel .vls-gf-image-edit-overlay .vls-gf-crop-mask .ui-resizable-ne {
+  top: -4px;
+  right: -4px;
+  height: 18px;
+  width: 18px;
+  cursor: nesw-resize;
+}
+.vls-gf-modal .vls-gf-image-details-dialog .vls-gf-content .vls-gf-image-panel .vls-gf-image-edit-overlay .vls-gf-crop-mask .ui-resizable-e {
+  top: 14px;
+  right: -4px;
+  bottom: 14px;
+  width: 14px;
+  cursor: ew-resize;
+}
+.vls-gf-modal .vls-gf-image-details-dialog .vls-gf-content .vls-gf-image-panel .vls-gf-image-edit-overlay .vls-gf-crop-mask .ui-resizable-se {
+  bottom: -4px;
+  right: -4px;
+  height: 18px;
+  width: 18px;
+  cursor: nwse-resize;
+}
+.vls-gf-modal .vls-gf-image-details-dialog .vls-gf-content .vls-gf-image-panel .vls-gf-image-edit-overlay .vls-gf-crop-mask .ui-resizable-s {
+  bottom: -4px;
+  left: 14px;
+  right: 14px;
+  height: 14px;
+  cursor: ns-resize;
+}
+.vls-gf-modal .vls-gf-image-details-dialog .vls-gf-content .vls-gf-image-panel .vls-gf-image-edit-overlay .vls-gf-crop-mask .ui-resizable-sw {
+  bottom: -4px;
+  left: -4px;
+  height: 18px;
+  width: 18px;
+  cursor: nesw-resize;
+}
+.vls-gf-modal .vls-gf-image-details-dialog .vls-gf-content .vls-gf-image-panel .vls-gf-image-edit-overlay .vls-gf-crop-mask .ui-resizable-w {
+  top: 14px;
+  bottom: 14px;
+  left: -4px;
+  width: 14px;
+  cursor: ew-resize;
+}
+.vls-gf-modal .vls-gf-image-details-dialog .vls-gf-content .vls-gf-image-panel .vls-gf-image-edit-overlay .vls-gf-crop-mask .ui-resizable-nw {
+  top: -4px;
+  left: -4px;
+  height: 18px;
+  width: 18px;
+  cursor: nwse-resize;
+}
+@-webkit-keyframes marching-ants {
+  0% {
+    background-position: 0 0, 0 100%, 0 0, 100% 0;
+  }
+  100% {
+    background-position: 12px 0, -12px 100%, 0 -12px, 100% 12px;
+  }
+}
+@keyframes marching-ants {
+  0% {
+    background-position: 0 0, 0 100%, 0 0, 100% 0;
+  }
+  100% {
+    background-position: 12px 0, -12px 100%, 0 -12px, 100% 12px;
+  }
+}
+.vls-gf-modal .vls-gf-image-details-dialog .vls-gf-content .vls-gf-options-panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 560px;
+  background-color: #f2f2f2;
+  border-left: 1px solid #e5e5e5;
+  overflow-y: auto;
+}
+.vls-gf-modal .vls-gf-image-details-dialog .vls-gf-content .vls-gf-options-panel .vls-gf-container {
+  position: relative;
+  margin: 10px;
+}
+.vls-gf-modal .vls-gf-image-details-dialog .vls-gf-content .vls-gf-options-panel .vls-gf-container .vls-gf-update-group {
+  margin-bottom: 8px;
+  text-align: right;
+}
+.vls-gf-modal .vls-gf-image-details-dialog .vls-gf-content .vls-gf-options-panel .vls-gf-container .vls-gf-column-2 {
+  float: left;
+  width: 50%;
+}
+.vls-gf-modal .vls-gf-image-details-dialog .vls-gf-content .vls-gf-options-panel .vls-gf-container .vls-gf-info-line {
+  font-size: 13px;
+}
+.vls-gf-modal .vls-gf-image-details-dialog .vls-gf-content .vls-gf-options-panel .vls-gf-container .vls-gf-info-line strong {
+  font-weight: bold;
+  margin-right: 4px;
+}
+.vls-gf-modal .vls-gf-image-details-dialog .vls-gf-content .vls-gf-options-panel .vls-gf-container .vls-gf-divider {
+  position: relative;
+  clear: both;
+  height: 16px;
+  border-bottom: 1px solid #e5e5e5;
+  margin: 128px 6px 10px 6px;
 }
 input.vls-gf-form-primary {
   font-size: 20px;
@@ -953,12 +1185,54 @@ input.vls-gf-form-primary {
   display: none;
   padding: 0 8px;
 }
-.vls-gf-lite-notice {
-  font-size: 12px;
-  line-height: 16px;
-  padding: 8px 10px 0 240px;
-  text-align: right;
+.mce-toolbar .mce-btn i.mce-i-vls_gf_album {
+  font-family: "dashicons";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
-.vls-gf-gallery-manager-header {
-  float: left;
+.mce-toolbar .mce-btn i.mce-i-vls_gf_album:before {
+  content: "\f161";
+}
+#vls-gf-album-shortcode-dialog .vls-gf-container {
+  margin: 10px;
+}
+#vls-gf-album-shortcode-dialog .vls-gf-container ul {
+  display: none;
+  list-style: none;
+  padding: 0;
+  margin-left: 14px;
+  overflow: hidden;
+}
+#vls-gf-album-shortcode-dialog .vls-gf-container ul li {
+  cursor: pointer;
+  line-height: 24px;
+}
+#vls-gf-album-shortcode-dialog .vls-gf-container ul li > i {
+  display: inline-block;
+  width: 18px;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+#vls-gf-album-shortcode-dialog .vls-gf-container ul li > i:before {
+  line-height: 24px;
+}
+#vls-gf-album-shortcode-dialog .vls-gf-container ul li.vls-gf-folder > i:before {
+  content: "\f114";
+}
+#vls-gf-album-shortcode-dialog .vls-gf-container ul li.vls-gf-folder.vls-gf-opened > i:before {
+  content: "\f115";
+}
+#vls-gf-album-shortcode-dialog .vls-gf-container ul li.vls-gf-album > i:before {
+  content: "\f03e";
+}
+#vls-gf-album-shortcode-dialog .vls-gf-container > ul {
+  display: block;
+}
+#vls-gf-album-shortcode-dialog #vls-gf-album-shortcode-dialog-body {
+  overflow: auto;
+}
+#vls-gf-album-shortcode-dialog .mce-foot {
+  border-radius: 0 0 0 0;
 }
