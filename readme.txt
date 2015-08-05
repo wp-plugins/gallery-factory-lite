@@ -90,3 +90,13 @@ GF checks if it can create the `/wp-content/gf-uploads` folder and write to it. 
 
 = 1.1.0 =
 * First release of the Lite version.
+
+
+
+== Upgrade Notice ==
+
+= 1.1.2 =
+Plugin update. Added localization, custom thumbnail cropping, import from the NextGen Gallery.
+
+= 1.1.1 =
+Bug fix. Added missing ".min.js" files.
