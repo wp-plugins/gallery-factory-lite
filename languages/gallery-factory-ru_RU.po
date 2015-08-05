@@ -1,0 +1,986 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gallery Factory\n"
+"POT-Creation-Date: 2015-08-05 03:06+0300\n"
+"PO-Revision-Date: 2015-08-05 03:13+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ru_RU\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.3\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: gallery-factory.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: admin/class-gallery-factory-admin-ajax.php:117
+msgid "Bulk select"
+msgstr "Множественный выбор"
+
+#: admin/class-gallery-factory-admin-ajax.php:121
+msgid "Upload images"
+msgstr "Загрузить изображения"
+
+#: admin/class-gallery-factory-admin-ajax.php:127
+msgid "Cancel selection"
+msgstr "Отменить выделение"
+
+#: admin/class-gallery-factory-admin-ajax.php:131
+msgid "Delete selected"
+msgstr "Удалить выделенные"
+
+#: admin/class-gallery-factory-admin-ajax.php:137
+msgid "Select all"
+msgstr "Выбрать все"
+
+#: admin/class-gallery-factory-admin-ajax.php:141
+msgid "Select none"
+msgstr "Снять выделение"
+
+#: admin/class-gallery-factory-admin-ajax.php:145
+msgid "Invert selected"
+msgstr "Обратить выделение"
+
+#: admin/class-gallery-factory-admin-ajax.php:920
+msgid "The uploaded file is not a valid image. Please try again."
+msgstr ""
+"Загруженный файл не является допустимым файлом изображения. Пожалуйста, "
+"повторите попытку."
+
+#: admin/class-gallery-factory-admin.php:147
+msgctxt "full"
+msgid "All images"
+msgstr "Все изображения"
+
+#: admin/class-gallery-factory-admin.php:148
+#: admin/templates/tmpl-gallery-manager.php:45
+msgctxt "full"
+msgid "Unsorted images"
+msgstr "Несортированные изображения"
+
+#: admin/class-gallery-factory-admin.php:149
+msgid "Save"
+msgstr "Сохранить"
+
+#: admin/class-gallery-factory-admin.php:150
+#: admin/class-gallery-factory-admin.php:267
+#: admin/templates/tmpl-gallery-manager.php:38
+msgid "Cancel"
+msgstr "Отмена"
+
+#: admin/class-gallery-factory-admin.php:151
+msgid "Image Details"
+msgstr "Параметры изображения"
+
+#: admin/class-gallery-factory-admin.php:152
+msgid "Rename item"
+msgstr "Переименовать элемент"
+
+#: admin/class-gallery-factory-admin.php:153
+msgid "Rename"
+msgstr "Переименовать"
+
+#: admin/class-gallery-factory-admin.php:154
+msgid "New name"
+msgstr "Новое наименование"
+
+#: admin/class-gallery-factory-admin.php:155
+msgid "New album"
+msgstr "Новый альбом"
+
+#: admin/class-gallery-factory-admin.php:156
+#: admin/class-gallery-factory-admin.php:159
+msgid "Create"
+msgstr "Создать"
+
+#: admin/class-gallery-factory-admin.php:157
+msgid "Album name"
+msgstr "Наименование альбома"
+
+#: admin/class-gallery-factory-admin.php:158
+msgid "New folder"
+msgstr "Новая папка"
+
+#: admin/class-gallery-factory-admin.php:160
+msgid "Folder name"
+msgstr "Наименование папки"
+
+#: admin/class-gallery-factory-admin.php:161
+msgid "Confirm delete"
+msgstr "Подтвердите удаление"
+
+#: admin/class-gallery-factory-admin.php:162
+msgid "Delete"
+msgstr "Удалить"
+
+#: admin/class-gallery-factory-admin.php:163
+#, php-format
+msgid "Delete album %1$s? "
+msgstr "Удалить альбом %1$s?"
+
+#: admin/class-gallery-factory-admin.php:164
+#, php-format
+msgid "Delete folder %1$s and all its descendants?"
+msgstr "Удалить папку %1$s и все содержащиеся в ней папки и альбомы?"
+
+#: admin/class-gallery-factory-admin.php:167
+msgctxt "plupload"
+msgid "Drag files here"
+msgstr "Перетащите файлы сюда"
+
+#: admin/class-gallery-factory-admin.php:168
+msgctxt "plupload"
+msgid "Add Files"
+msgstr "Добавить файлы"
+
+#: admin/class-gallery-factory-admin.php:169
+msgctxt "plupload"
+msgid "Start Upload"
+msgstr "Начать загрузку"
+
+#: admin/class-gallery-factory-admin.php:170
+msgctxt "plupload"
+msgid "Stop Upload"
+msgstr "Остановить загрузку"
+
+#: admin/class-gallery-factory-admin.php:171
+msgctxt "plupload"
+msgid "Cancel"
+msgstr "Отмена"
+
+#: admin/class-gallery-factory-admin.php:172
+#, php-format
+msgctxt "plupload"
+msgid "File: %1$s"
+msgstr "Файл: %1$s"
+
+#: admin/class-gallery-factory-admin.php:173
+#, php-format
+msgctxt "plupload"
+msgid "File: %1$s, size: %2$d, max file size: %3$d"
+msgstr "Файл: %1$s, размер %2$d, максимальный размер: %3$d"
+
+#: admin/class-gallery-factory-admin.php:174
+#, php-format
+msgctxt "plupload"
+msgid "%1$s already present in the queue."
+msgstr "%1$s уже присутствует в очереди."
+
+#: admin/class-gallery-factory-admin.php:175
+#, php-format
+msgctxt "plupload"
+msgid ""
+"Upload element accepts only %1$d file(s) at a time. Extra files were "
+"stripped."
+msgstr ""
+"Панель загрузки принимает только %1$d файлов за раз. Лишние файлы были "
+"отброшены."
+
+#: admin/class-gallery-factory-admin.php:176
+msgctxt "plupload"
+msgid "Image format either wrong or not supported."
+msgstr "Формат изображения неверный или не поддерживается."
+
+#: admin/class-gallery-factory-admin.php:177
+msgctxt "plupload"
+msgid "Close"
+msgstr "Закрыть"
+
+#: admin/class-gallery-factory-admin.php:178
+#, php-format
+msgctxt "plupload"
+msgid "Uploaded %d/%d files"
+msgstr "Загружено %d/%d файл(ов)"
+
+#: admin/class-gallery-factory-admin.php:266
+msgid "Insert Gallery Factory Album"
+msgstr "Вставить альбом Gallery Factory"
+
+#: admin/class-gallery-factory-admin.php:268
+msgid "Select an album to insert"
+msgstr "Выберите альбом для вставки"
+
+#: admin/templates/tmpl-album-edit.php:11
+#: admin/templates/tmpl-album-edit.php:38
+#: admin/templates/tmpl-image-details.php:103
+#: admin/templates/tmpl-settings.php:22
+msgid "Caption"
+msgstr "Подпись"
+
+#: admin/templates/tmpl-album-edit.php:16
+#: admin/templates/tmpl-image-details.php:113
+msgid "Description"
+msgstr "Описание"
+
+#: admin/templates/tmpl-album-edit.php:21
+msgid "Append new images to"
+msgstr "Добавлять новые изображения"
+
+#: admin/templates/tmpl-album-edit.php:24
+msgid "Top"
+msgstr "В начало"
+
+#: admin/templates/tmpl-album-edit.php:26
+msgid "Bottom"
+msgstr "В конец"
+
+#: admin/templates/tmpl-album-edit.php:31
+msgid "Display info on hover"
+msgstr "Отображать информацию при наведении"
+
+#: admin/templates/tmpl-album-edit.php:34
+msgid "Use global setting"
+msgstr "Использовать глобальные настройки"
+
+#: admin/templates/tmpl-album-edit.php:36 admin/templates/tmpl-settings.php:18
+msgid "None"
+msgstr "Нет"
+
+#: admin/templates/tmpl-album-edit.php:40 admin/templates/tmpl-settings.php:26
+msgid "Caption & description"
+msgstr "Подпись и описание"
+
+#: admin/templates/tmpl-album-edit.php:46
+#: admin/templates/tmpl-image-details.php:26
+msgid "Update"
+msgstr "Обновить"
+
+#: admin/templates/tmpl-album-edit.php:47
+#: admin/templates/tmpl-album-layout.php:16
+#: admin/templates/tmpl-image-details.php:25
+msgid "updated"
+msgstr "обновлено"
+
+#: admin/templates/tmpl-album-edit.php:49
+msgid "Slug"
+msgstr "Ярлык"
+
+#: admin/templates/tmpl-album-edit.php:53
+msgid "Author"
+msgstr "Автор"
+
+#: admin/templates/tmpl-album-edit.php:64
+msgid "Edit more details"
+msgstr "Открыть расширенную форму редактирования"
+
+#: admin/templates/tmpl-album-layout.php:3
+msgid "Zoom"
+msgstr "Масштаб"
+
+#: admin/templates/tmpl-album-layout.php:15
+msgid "Update layout"
+msgstr "Обновить раскладку"
+
+#: admin/templates/tmpl-album-layout.php:29
+msgid "Layout type"
+msgstr "Тип раскладки"
+
+#: admin/templates/tmpl-album-layout.php:41
+#: admin/templates/tmpl-album-layout.php:75
+msgid "Column count"
+msgstr "Количество столбцов"
+
+#: admin/templates/tmpl-album-layout.php:53
+#: admin/templates/tmpl-album-layout.php:87
+msgid "Aspect ratio"
+msgstr "Соотношение сторон"
+
+#: admin/templates/tmpl-album-layout.php:59
+#: admin/templates/tmpl-album-layout.php:92
+msgid "Horizontal spacing"
+msgstr "Горизонтальный отступ"
+
+#: admin/templates/tmpl-album-layout.php:65
+#: admin/templates/tmpl-album-layout.php:98
+msgid "Vertical spacing"
+msgstr "Вертикальный отступ"
+
+#: admin/templates/tmpl-gallery-manager.php:2
+msgid "Gallery Factory Manager"
+msgstr "Панель управления Gallery Factory"
+
+#: admin/templates/tmpl-gallery-manager.php:5
+msgid ""
+"You are using the Lite version of the Gallery Factory plugin, offering just "
+"basic features.<br>The full-featured premium version is available at <a href="
+"\"http://codecanyon.net/item/gallery-factory/11219294\">CodeCanyon</a>."
+msgstr ""
+"Вы используете Lite-версию плагина Gallery Factory, которая предоставляет "
+"лишь базовые функции.<br>Полная версия доступна на <a href=\"http://"
+"codecanyon.net/item/gallery-factory/11219294\">CodeCanyon</a>."
+
+#: admin/templates/tmpl-gallery-manager.php:11
+#: shared/class-gallery-factory.php:242
+msgid "Albums"
+msgstr "Альбомы"
+
+#: admin/templates/tmpl-gallery-manager.php:16
+msgctxt "reduced"
+msgid "All images"
+msgstr "Все изображения"
+
+#: admin/templates/tmpl-gallery-manager.php:19
+msgctxt "reduced"
+msgid "Unsorted images"
+msgstr "Несортированные изобр."
+
+#: admin/templates/tmpl-gallery-manager.php:28
+msgid "Edit list"
+msgstr "Редактировать список"
+
+#: admin/templates/tmpl-gallery-manager.php:32
+msgid "Add folder"
+msgstr "Добавить папку"
+
+#: admin/templates/tmpl-gallery-manager.php:34
+msgid "Add album"
+msgstr "Добавить альбом"
+
+# Should be short enough to fit the button
+#: admin/templates/tmpl-gallery-manager.php:36
+msgid "Save changes"
+msgstr "Сохранить"
+
+#: admin/templates/tmpl-gallery-manager.php:46
+msgid "shortcode"
+msgstr "шорткод"
+
+#: admin/templates/tmpl-gallery-manager.php:54
+msgctxt "tab"
+msgid "Overview"
+msgstr "Обзор"
+
+#: admin/templates/tmpl-gallery-manager.php:58
+msgctxt "tab"
+msgid "Layout"
+msgstr "Макет"
+
+#: admin/templates/tmpl-gallery-manager.php:62
+msgctxt "tab"
+msgid "Edit"
+msgstr "Параметры"
+
+#: admin/templates/tmpl-image-details.php:32
+msgid "File name"
+msgstr "Имя файла"
+
+#: admin/templates/tmpl-image-details.php:35
+msgid "File type"
+msgstr "Тип файла"
+
+#: admin/templates/tmpl-image-details.php:38
+msgid "Uploaded on"
+msgstr "Загружен"
+
+#: admin/templates/tmpl-image-details.php:41
+msgid "File size"
+msgstr "Размер файла"
+
+#: admin/templates/tmpl-image-details.php:44
+msgid "Dimensions"
+msgstr "Размер изображения"
+
+#: admin/templates/tmpl-image-details.php:47
+msgid "Uploaded by"
+msgstr "Пользователь"
+
+#: admin/templates/tmpl-image-details.php:54
+msgid "Camera"
+msgstr "Камера"
+
+#: admin/templates/tmpl-image-details.php:59
+msgid "Lens"
+msgstr "Объектив"
+
+#: admin/templates/tmpl-image-details.php:64
+msgid "Focal length"
+msgstr "Фокусное расстояние"
+
+#: admin/templates/tmpl-image-details.php:70
+msgid "Shutter speed"
+msgstr "Выдержка"
+
+#: admin/templates/tmpl-image-details.php:76
+msgid "Aperture"
+msgstr "Диафрагма"
+
+#: admin/templates/tmpl-image-details.php:81
+msgid "ISO"
+msgstr "ISO"
+
+#: admin/templates/tmpl-image-details.php:86
+msgid "Created on"
+msgstr "Создан"
+
+#: admin/templates/tmpl-image-details.php:98
+msgid "URL"
+msgstr "URL"
+
+#: admin/templates/tmpl-image-details.php:108
+msgid "Alt text"
+msgstr "Альтернативный текст"
+
+#: admin/templates/tmpl-settings.php:12
+msgid "Image info display on hover"
+msgstr "Отображать информацию при наведении"
+
+#: admin/templates/tmpl-settings.php:30
+msgid "Select what info will be displayed on hovering the thumbnail."
+msgstr ""
+"Выберите, какая информация должна отображаться при наведении на изображение"
+
+#: admin/templates/tmpl-tools.php:6
+msgid "Images are successfully imported"
+msgstr "Изображения успешно импортированы"
+
+#: admin/templates/tmpl-tools.php:11
+msgid "No installed NextGen Gallery found"
+msgstr "Плагин NextGen Gallery не установлен"
+
+#: admin/templates/tmpl-tools.php:21
+msgid ""
+"This feature imports all your Wordpress Media images to the Gallery Factory. "
+"All other attachment file types are ignored. The imported images are added "
+"to the \"Unsorted images\" folder within Gallery Factory. The WP Media "
+"content is just copied during the import and remains untouched."
+msgstr ""
+"Вы можете импортировать все медиафайлы WordPress в Gallery Factory. При этом "
+"загружаются только файлы изображений, другие типы файлов игнорируются. "
+"Загруженные файлы появятся в папке \"Несортированные изображения\" в панели "
+"управления Gallery Factory. Исходные изображения при импорте не "
+"затрагиваются."
+
+#: admin/templates/tmpl-tools.php:23
+msgid ""
+"Please note, that Gallery Factory uses its own uploads folder on server, so "
+"physical image files will be copied there from the original WP location. "
+"Make sure that you have enough disk space before proceeding with the import. "
+"The import procedure may take time, depending on your WP Media content size. "
+"Import can't be canceled once started, and the result is not undoable."
+msgstr ""
+"Пожалуйста учтите, что Gallery Factory использует собственную папку для "
+"хранения загруженных изображений, поэтому при импорте файлы изображений "
+"будут скопированы из папки загрузок WordPress в папку Gallery Factory. "
+"Убедитесь, что на жестком диске достаточно свободного места для этой "
+"операции, прежде чем запустить импорт. Процедура импорта может занять "
+"длительное время, в зависимости от объема импортируемых данных. Импорт не "
+"может быть остановлен, будучи запущенным, и результат импорта не подлежит "
+"отмене."
+
+#: admin/templates/tmpl-tools.php:27
+msgid "Import images from WP Media"
+msgstr "Импортировать изображения из библиотеки файлов WordPress"
+
+#: admin/templates/tmpl-tools.php:38
+msgid ""
+"This feature imports all your NextGen Gallery albums, galleries and images "
+"to the Gallery Factory. The NextGen content is just copied during the import "
+"and remains untouched."
+msgstr ""
+"Вы можете импортировать вашу коллекцию изображений из NextGen Gallery. При "
+"импорте структура альбомов и галерей NextGen преобразуется в структуру папок "
+"и альбомов Gallery Factory.  Данные NextGen Gallery при импорте не "
+"затрагиваются."
+
+#: admin/templates/tmpl-tools.php:40
+msgid ""
+"Please note, that Gallery Factory uses its own uploads folder on server, so "
+"physical image files will be copied there from the original NextGen uploads "
+"folder. Make sure that you have enough disk space before proceeding with the "
+"import. The import procedure may take time, depending on your NextGen "
+"Gallery content size. Import can't be canceled once started, and the result "
+"is not undoable."
+msgstr ""
+"Пожалуйста учтите, что Gallery Factory использует собственную папку для "
+"хранения загруженных изображений, поэтому при импорте файлы изображений "
+"будут скопированы из папки загрузок NextGen Gallery в папку Gallery Factory. "
+"Убедитесь, что на жестком диске достаточно свободного места для этой "
+"операции, прежде чем запустить импорт. Процедура импорта может занять "
+"длительное время, в зависимости от объема импортируемых данных. Импорт не "
+"может быть остановлен, будучи запущенным, и результат импорта не подлежит "
+"отмене."
+
+#: admin/templates/tmpl-tools.php:46
+msgid "Create \"NextGen\" folder and put all imported items there"
+msgstr ""
+"Создать папку \"NextGen\" и поместить импортированные папки и альбомы в неё."
+
+#: admin/templates/tmpl-tools.php:52
+msgid "Import images from NextGen Gallery"
+msgstr "Импортировать папки, альбомы и изображения из NextGen Gallery"
+
+#: admin/templates/tmpl-tools.php:66
+msgid "Importing... Please do not reload this page until import is finished."
+msgstr ""
+"Выполняется импорт... Пожалуйста, не покидайте эту страницу пока импорт не "
+"завершится."
+
+#: shared/class-gallery-factory.php:79
+#, php-format
+msgid "Gallery Factory version %1$s requires WordPress %2$s or higher."
+msgstr ""
+"Для установки Gallery Factory версии %1$s требуется WordPress версии не ниже "
+"%2$s."
+
+#: shared/class-gallery-factory.php:206
+msgid "Folders"
+msgstr "Папки"
+
+#: shared/class-gallery-factory.php:207
+msgid "Folder"
+msgstr "Папка"
+
+#: shared/class-gallery-factory.php:208
+msgid "Add New Folder"
+msgstr "Добавить папку"
+
+#: shared/class-gallery-factory.php:209
+msgid "Edit Folder"
+msgstr "Редактировать папку"
+
+#: shared/class-gallery-factory.php:210
+msgid "New Folder"
+msgstr "Новая папка"
+
+#: shared/class-gallery-factory.php:211
+msgid "View Folder"
+msgstr "Просмотр папки"
+
+#: shared/class-gallery-factory.php:212
+msgid "Search Folders"
+msgstr "Поиск папок"
+
+#: shared/class-gallery-factory.php:213
+msgid "No folders found"
+msgstr "Не найдено ни одной папки"
+
+#: shared/class-gallery-factory.php:214
+msgid "No folders found in Trash"
+msgstr "В корзине не найдено ни одной папки"
+
+#: shared/class-gallery-factory.php:215
+msgid "All Folders"
+msgstr "Все папки"
+
+#: shared/class-gallery-factory.php:217
+msgid "Gallery Factory folder"
+msgstr "Папка Gallery Factory"
+
+#: shared/class-gallery-factory.php:243
+msgid "Album"
+msgstr "Альбом"
+
+#: shared/class-gallery-factory.php:244
+msgid "Add New Album"
+msgstr "Добавить новый альбом"
+
+#: shared/class-gallery-factory.php:245
+msgid "Edit Album"
+msgstr "Редактировать альбом"
+
+#: shared/class-gallery-factory.php:246
+msgid "New Album"
+msgstr "Новый альбом"
+
+#: shared/class-gallery-factory.php:247
+msgid "View Album"
+msgstr "Просмотр альбома"
+
+#: shared/class-gallery-factory.php:248
+msgid "Search Albums"
+msgstr "Поиск по альбомам"
+
+#: shared/class-gallery-factory.php:249
+msgid "No albums found"
+msgstr "Не найдено ни одного альбома"
+
+#: shared/class-gallery-factory.php:250
+msgid "No albums found in Trash"
+msgstr "В корзине не найдено ни одного альбома"
+
+#: shared/class-gallery-factory.php:251
+msgid "All Albums"
+msgstr "Все альбомы"
+
+#: shared/class-gallery-factory.php:253
+msgid "Gallery Factory \"gallery\" post type"
+msgstr "Gallery Factory \"gallery\" post type"
+
+#: shared/class-gallery-factory.php:279
+msgid "Images"
+msgstr "Изображения"
+
+#: shared/class-gallery-factory.php:280
+msgid "Image"
+msgstr "Изображение"
+
+#: shared/class-gallery-factory.php:281 shared/class-gallery-factory.php:290
+msgid "All Images"
+msgstr "Все изображения"
+
+#: shared/class-gallery-factory.php:282 shared/class-gallery-factory.php:283
+msgid "Add New Image"
+msgstr "Добавить новое изображение"
+
+#: shared/class-gallery-factory.php:284
+msgid "Edit Image"
+msgstr "Редактировать изображение"
+
+#: shared/class-gallery-factory.php:285
+msgid "New Image"
+msgstr "Новое изображение"
+
+#: shared/class-gallery-factory.php:286
+msgid "View Image"
+msgstr "Просмотр изображения"
+
+#: shared/class-gallery-factory.php:287
+msgid "Search Images"
+msgstr "Поиск по изображениям"
+
+#: shared/class-gallery-factory.php:288
+msgid "No images found"
+msgstr "Не найдено ни одного изображения"
+
+#: shared/class-gallery-factory.php:289
+msgid "No images found in Trash"
+msgstr "В корзине не найдено ни одного изображения"
+
+#: shared/class-gallery-factory.php:292
+msgid "Gallery Factory \"image\" post type"
+msgstr "Gallery Factory \"image\" post type"
+
+#: shared/class-gallery-factory.php:317
+msgid "Gallery Factory \"gallery image link\" post type"
+msgstr "Gallery Factory \"gallery image link\" post type"
+
+#. Plugin Name of the plugin/theme
+msgid "Gallery Factory Lite"
+msgstr "Gallery Factory Lite"
+
+#. Plugin URI of the plugin/theme
+msgid "http://galleryfactory.vilyon.net"
+msgstr "http://galleryfactory.vilyon.net"
+
+#. Description of the plugin/theme
+msgid ""
+"Great tool for managing large image collections with user-friendly album "
+"manager interface and visual layout builder."
+msgstr ""
+"Отличный плагин для управления большими коллекциями изображений с простым, "
+"понятным интерфейсом и интерактивным редактором представлений альбомов."
+
+#. Author of the plugin/theme
+msgid "Vilyon Studio"
+msgstr "Vilyon Studio"
+
+#. Author URI of the plugin/theme
+msgid "http://vilyon.net/"
+msgstr "http://vilyon.net/"
+
+#~ msgid ""
+#~ "You are using the Lite version of the Gallery Factory plugin, offering "
+#~ "just basic features.<br>The full-featured version is available at <a href="
+#~ "\"http://codecanyon.net/item/gallery-factory/11219294\">CodeCanyon</a>."
+#~ msgstr ""
+#~ "Вы используете Lite-версию плагина Gallery Factory, которая которая "
+#~ "предоставляет лишь базовые функции.<br>Полная версия доступна на <a href="
+#~ "\"http://codecanyon.net/item/gallery-factory/11219294\">CodeCanyon</a>."
+
+#~ msgid "Pagination type"
+#~ msgstr "Тип постраничного отображения"
+
+#~ msgid "Paged (numbers)"
+#~ msgstr "Страницы (номера страниц)"
+
+#~ msgid "Paged (bullets)"
+#~ msgstr "Страницы (маркеры)"
+
+#~ msgid "Load more button"
+#~ msgstr "Кнопка \"Показать больше\""
+
+#~ msgid "Load on scroll"
+#~ msgstr "Загрузка при пролистывании"
+
+#~ msgid "Page size (in rows), set 0 to use global setting"
+#~ msgstr ""
+#~ "Размер страницы (в рядах), укажите 0 чтобы использовать глобальные "
+#~ "настройки"
+
+#~ msgid "Pagination style"
+#~ msgstr "Стиль постраничного отображения"
+
+#~ msgid "Light"
+#~ msgstr "Светлый"
+
+#~ msgid "Dark"
+#~ msgstr "Темный"
+
+#~ msgid "Custom"
+#~ msgstr "Пользовательский"
+
+#~ msgid "Overview"
+#~ msgstr "Обзор"
+
+#~ msgid "Layout"
+#~ msgstr "Макет"
+
+# Tab caption
+#~ msgid "Edit"
+#~ msgstr "Параметры"
+
+#~ msgid "Click action"
+#~ msgstr "Действие при клике"
+
+#~ msgid "Open in lightbox"
+#~ msgstr "Открыть в лайтбоксе"
+
+#~ msgid "Redirect to URL"
+#~ msgstr "Перенаправить на URL"
+
+#~ msgid ""
+#~ "Open dedicated image page (experimental, please refer to the user manual)"
+#~ msgstr ""
+#~ "Открыть отдельную страницу изображения (экспериментальная функция, "
+#~ "обратитесь к инструкции)"
+
+#~ msgid "No action"
+#~ msgstr "Нет действия"
+
+#~ msgid "Link URL"
+#~ msgstr "URL ссылки"
+
+#~ msgid "Open link in"
+#~ msgstr "Открыть ссылку в"
+
+#~ msgid "Same window"
+#~ msgstr "Текущем окне"
+
+#~ msgid "New window"
+#~ msgstr "Новом окне"
+
+#~ msgid "Lightbox"
+#~ msgstr "Лайтбокс"
+
+#~ msgid "Disable"
+#~ msgstr "Отключить"
+
+#~ msgid ""
+#~ "This option defines the lightbox to be used. Select \"Disable\" to "
+#~ "disable lightbox integration."
+#~ msgstr ""
+#~ "Этот параметр определяет, какой лайтбокс должен использоваться для показа "
+#~ "изображений. Выберите \"Отключено\" для полного отключения лайтбокса."
+
+#~ msgid "Select which info will be displayed on hovering the thumbnail."
+#~ msgstr ""
+#~ "Выберите, какая информация будет отображаться при наведении на "
+#~ "изображение."
+
+#~ msgid "Page size"
+#~ msgstr "Размер страницы"
+
+#~ msgid ""
+#~ "This is a number of rows in a page, relative to the album  layout's "
+#~ "column count (e.g. value 1.5 for 6-column layout results in 9 rows on a "
+#~ "page)."
+#~ msgstr ""
+#~ "Укажите количество строк  на странице, относительно количества столбцов в "
+#~ "макете (например, значение 1,5 для 6-колоночного макета даст 9 строк на "
+#~ "странице)."
+
+#~ msgid ""
+#~ "Set the default pagination behaviour for the albums. For more info on "
+#~ "available options please refer to the documentation."
+#~ msgstr ""
+#~ "Установите тип постраничного вывода  по умолчанию. За дополнительной "
+#~ "информацией по доступным вариантам обратитесь к документации."
+
+#~ msgid ""
+#~ "You can choose from two predefined styles for pagination controls or "
+#~ "select \"Custom\" and define your own style in css."
+#~ msgstr ""
+#~ "Вы можете выбрать из двух предустановленных стилей либо выбрать вариант "
+#~ "\"Пользовательский\" и определить собственный стиль с помощью CSS."
+
+#~ msgid "Lazy loading"
+#~ msgstr "Отложенная загрузка"
+
+#~ msgid "Use lazy loading"
+#~ msgstr "Использовать отложенную загрузку изображений"
+
+#~ msgid ""
+#~ "Lazy loading of thumbnails means that image thumbnails outside of "
+#~ "viewport are not loaded until user scrolls to them."
+#~ msgstr ""
+#~ "Отложенная загрузка означает, что загружаются только те изображения, "
+#~ "которые видны пользователю. Остальные изображения подгружаются "
+#~ "динамически по мере пролистывания страницы."
+
+#~ msgid "Load more"
+#~ msgstr "Показать больше"
+
+#~ msgid "The layout for the album %1$s  is not set."
+#~ msgstr "Макет для альбома %1$s не определен."
+
+#~ msgid "Gallery Factory"
+#~ msgstr "Gallery Factory"
+
+#~ msgid ""
+#~ "The most advanced gallery wordpress plugin, powerful yet easy to handle. "
+#~ "Manage your albums, create unique layouts."
+#~ msgstr ""
+#~ "Революционный плагин, созданный для управления большой коллекцией "
+#~ "изображений и создания привлекательных галерей."
+
+#~ msgid ""
+#~ "This feature imports all your Wordpress Media images to the Gallery "
+#~ "Factory. All other\n"
+#~ "            attachment file types are ignored. The imported images are "
+#~ "added to the \"Unsorted images\" folder within\n"
+#~ "            Gallery Factory. The WP Media content is just copied during "
+#~ "the import and remains untouched."
+#~ msgstr ""
+#~ "Вы можете импортировать все медиафайлы WordPress в Gallery Factory. При "
+#~ "этом загружаются только файлы изображений, другие типы файлов "
+#~ "игнорируются. Загруженные файлы появятся в папке \"Несортированные "
+#~ "изображения\" в панели управления Gallery Factory. Исходные изображения "
+#~ "при импорте не затрагиваются."
+
+#~ msgid ""
+#~ "Please note, that Gallery Factory uses its own uploads folder on server, "
+#~ "so physical image files will be\n"
+#~ "            copied there from the original WP location. Make sure that "
+#~ "you have enough disk space before proceeding with\n"
+#~ "            the import. The import procedure may take time, depending on "
+#~ "your WP Media content size. Import can't be canceled once started, and\n"
+#~ "            the result is not undoable."
+#~ msgstr ""
+#~ "Пожалуйста учтите, что Gallery Factory использует собственную папку для "
+#~ "хранения загруженных изображений, поэтому при импорте файлы изображений "
+#~ "будут скопированы из папки загрузок WordPress в папку Gallery Factory. "
+#~ "Убедитесь, что на жестком диске достаточно свободного места для этой "
+#~ "операции, прежде чем запустить импорт. Процедура импорта может занять "
+#~ "длительное время, в зависимости от объема импортируемых данных. Импорт не "
+#~ "может быть остановлен, будучи запущенным, и результат импорта не подлежит "
+#~ "отмене."
+
+#~ msgid ""
+#~ "This option defines the lightbox to be used. Select \"Disable\" to "
+#~ "disable\n"
+#~ "                        lightbox integration."
+#~ msgstr ""
+#~ "Этот параметр определяет, какой лайтбокс должен использоваться для показа "
+#~ "изображений. Выберите \"Отключено\" для полного отключения лайтбокса."
+
+#~ msgid ""
+#~ "This is a number of rows in a page, relative to the album  layout's "
+#~ "column count\n"
+#~ "\t                    (e.g. value 1.5 for 6-column layout results in 9 "
+#~ "rows on a page)."
+#~ msgstr ""
+#~ "Укажите количество строк  на странице, относительно количества столбцов в "
+#~ "макете (например, значение 1,5 для 6-колоночного макета даст 9 строк на "
+#~ "странице)."
+
+#~ msgid ""
+#~ "Lazy loading of thumbnails means that image thumbnails outside of "
+#~ "viewport\n"
+#~ "                        are not loaded until user scrolls to them."
+#~ msgstr ""
+#~ "Отложенная загрузка означает, что загружаются только те изображения, "
+#~ "которые видны пользователю. Остальные изображения подгружаются "
+#~ "динамически по мере пролистывания страницы."
+
+#~ msgid ""
+#~ "Please note, that Gallery Factory uses its own uploads folder on server, "
+#~ "so physical image files will be\n"
+#~ "            copied there from the original NextGen uploads folder. Make "
+#~ "sure that you have enough disk space before proceeding with\n"
+#~ "            the import. The import procedure may take time, depending on "
+#~ "your NextGen Gallery content size. Import can't be canceled once started, "
+#~ "and\n"
+#~ "            the result is not undoable."
+#~ msgstr ""
+#~ "Пожалуйста учтите, что Gallery Factory использует собственную папку для "
+#~ "хранения загруженных изображений, поэтому при импорте файлы изображений "
+#~ "будут скопированы из папки загрузок NextGen Gallery в папку Gallery "
+#~ "Factory. Убедитесь, что на жестком диске достаточно свободного места для "
+#~ "этой операции, прежде чем запустить импорт. Процедура импорта может "
+#~ "занять длительное время, в зависимости от объема импортируемых данных. "
+#~ "Импорт не может быть остановлен, будучи запущенным, и результат импорта "
+#~ "не подлежит отмене."
+
+#~ msgid ""
+#~ "This feature imports all your NextGen Gallery albums, galleries and "
+#~ "images to the Gallery Factory.\n"
+#~ "\t\t The imported images will be added to the \"Unsorted images\" folder "
+#~ "within\n"
+#~ "            Gallery Factory. The WP Media content is just copied during "
+#~ "the import and remains untouched."
+#~ msgstr ""
+#~ "Вы можете импортировать вашу коллекцию изображений из NextGen Gallery. "
+#~ "При импорте структура альбомов и галерей NextGen преобразуется в "
+#~ "структуру папок и альбомов Gallery Factory.  Данные NextGen Gallery при "
+#~ "импорте не затрагиваются."
+
+#~ msgid ""
+#~ "This option defines the lightbox to be used. Select \"Disabled\" to "
+#~ "disable\n"
+#~ "                        lightbox integration."
+#~ msgstr ""
+#~ "Этот параметр определяет, какой лайтбокс должен использоваться. Выберите "
+#~ "\"Отключено\" "
+
+#~ msgid "All images"
+#~ msgstr "Все изображения"
+
+#~ msgid "Unsorted images"
+#~ msgstr "Несортированные изображения"
+
+#~ msgid "All"
+#~ msgstr "Все"
+
+#~ msgid "Add Folder"
+#~ msgstr "Добавить папку"
+
+#~ msgid "Gallery Manager"
+#~ msgstr "Панель управления Gallery Factory"
+
+#~ msgid "Paged (numbered)"
+#~ msgstr "Страницы (нумерованные)"
+
+#~ msgid "File name:"
+#~ msgstr "Имя файла:"
+
+#~ msgid "File type:"
+#~ msgstr "Тип файла:"
+
+#~ msgid "File size:"
+#~ msgstr "Размер файла:"
+
+#~ msgid "Dimensions:"
+#~ msgstr "Размеры:"
+
+#~ msgid "Camera:"
+#~ msgstr "Камера:"
+
+#~ msgid "Focal length:"
+#~ msgstr "﻿Фокусное расстояние:"
+
+#~ msgid "Shutter speed:"
+#~ msgstr "Скорость затвора:"
+
+#~ msgid "Aperture:"
+#~ msgstr "Диафрагма:"
+
+#~ msgid "ISO:"
+#~ msgstr "ISO:"

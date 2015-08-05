@@ -1,0 +1,645 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Gallery Factory Lite\n"
+"POT-Creation-Date: 2015-08-05 03:06+0300\n"
+"PO-Revision-Date: 2015-07-09 22:36+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.3\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: gallery-factory.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: admin/class-gallery-factory-admin-ajax.php:117
+msgid "Bulk select"
+msgstr ""
+
+#: admin/class-gallery-factory-admin-ajax.php:121
+msgid "Upload images"
+msgstr ""
+
+#: admin/class-gallery-factory-admin-ajax.php:127
+msgid "Cancel selection"
+msgstr ""
+
+#: admin/class-gallery-factory-admin-ajax.php:131
+msgid "Delete selected"
+msgstr ""
+
+#: admin/class-gallery-factory-admin-ajax.php:137
+msgid "Select all"
+msgstr ""
+
+#: admin/class-gallery-factory-admin-ajax.php:141
+msgid "Select none"
+msgstr ""
+
+#: admin/class-gallery-factory-admin-ajax.php:145
+msgid "Invert selected"
+msgstr ""
+
+#: admin/class-gallery-factory-admin-ajax.php:920
+msgid "The uploaded file is not a valid image. Please try again."
+msgstr ""
+
+#: admin/class-gallery-factory-admin.php:147
+msgctxt "full"
+msgid "All images"
+msgstr ""
+
+#: admin/class-gallery-factory-admin.php:148
+#: admin/templates/tmpl-gallery-manager.php:45
+msgctxt "full"
+msgid "Unsorted images"
+msgstr ""
+
+#: admin/class-gallery-factory-admin.php:149
+msgid "Save"
+msgstr ""
+
+#: admin/class-gallery-factory-admin.php:150
+#: admin/class-gallery-factory-admin.php:267
+#: admin/templates/tmpl-gallery-manager.php:38
+msgid "Cancel"
+msgstr ""
+
+#: admin/class-gallery-factory-admin.php:151
+msgid "Image Details"
+msgstr ""
+
+#: admin/class-gallery-factory-admin.php:152
+msgid "Rename item"
+msgstr ""
+
+#: admin/class-gallery-factory-admin.php:153
+msgid "Rename"
+msgstr ""
+
+#: admin/class-gallery-factory-admin.php:154
+msgid "New name"
+msgstr ""
+
+#: admin/class-gallery-factory-admin.php:155
+msgid "New album"
+msgstr ""
+
+#: admin/class-gallery-factory-admin.php:156
+#: admin/class-gallery-factory-admin.php:159
+msgid "Create"
+msgstr ""
+
+#: admin/class-gallery-factory-admin.php:157
+msgid "Album name"
+msgstr ""
+
+#: admin/class-gallery-factory-admin.php:158
+msgid "New folder"
+msgstr ""
+
+#: admin/class-gallery-factory-admin.php:160
+msgid "Folder name"
+msgstr ""
+
+#: admin/class-gallery-factory-admin.php:161
+msgid "Confirm delete"
+msgstr ""
+
+#: admin/class-gallery-factory-admin.php:162
+msgid "Delete"
+msgstr ""
+
+#: admin/class-gallery-factory-admin.php:163
+#, php-format
+msgid "Delete album %1$s? "
+msgstr ""
+
+#: admin/class-gallery-factory-admin.php:164
+#, php-format
+msgid "Delete folder %1$s and all its descendants?"
+msgstr ""
+
+#: admin/class-gallery-factory-admin.php:167
+msgctxt "plupload"
+msgid "Drag files here"
+msgstr ""
+
+#: admin/class-gallery-factory-admin.php:168
+msgctxt "plupload"
+msgid "Add Files"
+msgstr ""
+
+#: admin/class-gallery-factory-admin.php:169
+msgctxt "plupload"
+msgid "Start Upload"
+msgstr ""
+
+#: admin/class-gallery-factory-admin.php:170
+msgctxt "plupload"
+msgid "Stop Upload"
+msgstr ""
+
+#: admin/class-gallery-factory-admin.php:171
+msgctxt "plupload"
+msgid "Cancel"
+msgstr ""
+
+#: admin/class-gallery-factory-admin.php:172
+#, php-format
+msgctxt "plupload"
+msgid "File: %1$s"
+msgstr ""
+
+#: admin/class-gallery-factory-admin.php:173
+#, php-format
+msgctxt "plupload"
+msgid "File: %1$s, size: %2$d, max file size: %3$d"
+msgstr ""
+
+#: admin/class-gallery-factory-admin.php:174
+#, php-format
+msgctxt "plupload"
+msgid "%1$s already present in the queue."
+msgstr ""
+
+#: admin/class-gallery-factory-admin.php:175
+#, php-format
+msgctxt "plupload"
+msgid ""
+"Upload element accepts only %1$d file(s) at a time. Extra files were "
+"stripped."
+msgstr ""
+
+#: admin/class-gallery-factory-admin.php:176
+msgctxt "plupload"
+msgid "Image format either wrong or not supported."
+msgstr ""
+
+#: admin/class-gallery-factory-admin.php:177
+msgctxt "plupload"
+msgid "Close"
+msgstr ""
+
+#: admin/class-gallery-factory-admin.php:178
+#, php-format
+msgctxt "plupload"
+msgid "Uploaded %d/%d files"
+msgstr ""
+
+#: admin/class-gallery-factory-admin.php:266
+msgid "Insert Gallery Factory Album"
+msgstr ""
+
+#: admin/class-gallery-factory-admin.php:268
+msgid "Select an album to insert"
+msgstr ""
+
+#: admin/templates/tmpl-album-edit.php:11
+#: admin/templates/tmpl-album-edit.php:38
+#: admin/templates/tmpl-image-details.php:103
+#: admin/templates/tmpl-settings.php:22
+msgid "Caption"
+msgstr ""
+
+#: admin/templates/tmpl-album-edit.php:16
+#: admin/templates/tmpl-image-details.php:113
+msgid "Description"
+msgstr ""
+
+#: admin/templates/tmpl-album-edit.php:21
+msgid "Append new images to"
+msgstr ""
+
+#: admin/templates/tmpl-album-edit.php:24
+msgid "Top"
+msgstr ""
+
+#: admin/templates/tmpl-album-edit.php:26
+msgid "Bottom"
+msgstr ""
+
+#: admin/templates/tmpl-album-edit.php:31
+msgid "Display info on hover"
+msgstr ""
+
+#: admin/templates/tmpl-album-edit.php:34
+msgid "Use global setting"
+msgstr ""
+
+#: admin/templates/tmpl-album-edit.php:36 admin/templates/tmpl-settings.php:18
+msgid "None"
+msgstr ""
+
+#: admin/templates/tmpl-album-edit.php:40 admin/templates/tmpl-settings.php:26
+msgid "Caption & description"
+msgstr ""
+
+#: admin/templates/tmpl-album-edit.php:46
+#: admin/templates/tmpl-image-details.php:26
+msgid "Update"
+msgstr ""
+
+#: admin/templates/tmpl-album-edit.php:47
+#: admin/templates/tmpl-album-layout.php:16
+#: admin/templates/tmpl-image-details.php:25
+msgid "updated"
+msgstr ""
+
+#: admin/templates/tmpl-album-edit.php:49
+msgid "Slug"
+msgstr ""
+
+#: admin/templates/tmpl-album-edit.php:53
+msgid "Author"
+msgstr ""
+
+#: admin/templates/tmpl-album-edit.php:64
+msgid "Edit more details"
+msgstr ""
+
+#: admin/templates/tmpl-album-layout.php:3
+msgid "Zoom"
+msgstr ""
+
+#: admin/templates/tmpl-album-layout.php:15
+msgid "Update layout"
+msgstr ""
+
+#: admin/templates/tmpl-album-layout.php:29
+msgid "Layout type"
+msgstr ""
+
+#: admin/templates/tmpl-album-layout.php:41
+#: admin/templates/tmpl-album-layout.php:75
+msgid "Column count"
+msgstr ""
+
+#: admin/templates/tmpl-album-layout.php:53
+#: admin/templates/tmpl-album-layout.php:87
+msgid "Aspect ratio"
+msgstr ""
+
+#: admin/templates/tmpl-album-layout.php:59
+#: admin/templates/tmpl-album-layout.php:92
+msgid "Horizontal spacing"
+msgstr ""
+
+#: admin/templates/tmpl-album-layout.php:65
+#: admin/templates/tmpl-album-layout.php:98
+msgid "Vertical spacing"
+msgstr ""
+
+#: admin/templates/tmpl-gallery-manager.php:2
+msgid "Gallery Factory Manager"
+msgstr ""
+
+#: admin/templates/tmpl-gallery-manager.php:5
+msgid ""
+"You are using the Lite version of the Gallery Factory plugin, offering just "
+"basic features.<br>The full-featured premium version is available at <a "
+"href=\"http://codecanyon.net/item/gallery-factory/11219294\">CodeCanyon</a>."
+msgstr ""
+
+#: admin/templates/tmpl-gallery-manager.php:11
+#: shared/class-gallery-factory.php:242
+msgid "Albums"
+msgstr ""
+
+#: admin/templates/tmpl-gallery-manager.php:16
+msgctxt "reduced"
+msgid "All images"
+msgstr ""
+
+#: admin/templates/tmpl-gallery-manager.php:19
+msgctxt "reduced"
+msgid "Unsorted images"
+msgstr ""
+
+#: admin/templates/tmpl-gallery-manager.php:28
+msgid "Edit list"
+msgstr ""
+
+#: admin/templates/tmpl-gallery-manager.php:32
+msgid "Add folder"
+msgstr ""
+
+#: admin/templates/tmpl-gallery-manager.php:34
+msgid "Add album"
+msgstr ""
+
+#: admin/templates/tmpl-gallery-manager.php:36
+msgid "Save changes"
+msgstr ""
+
+#: admin/templates/tmpl-gallery-manager.php:46
+msgid "shortcode"
+msgstr ""
+
+#: admin/templates/tmpl-gallery-manager.php:54
+msgctxt "tab"
+msgid "Overview"
+msgstr ""
+
+#: admin/templates/tmpl-gallery-manager.php:58
+msgctxt "tab"
+msgid "Layout"
+msgstr ""
+
+#: admin/templates/tmpl-gallery-manager.php:62
+msgctxt "tab"
+msgid "Edit"
+msgstr ""
+
+#: admin/templates/tmpl-image-details.php:32
+msgid "File name"
+msgstr ""
+
+#: admin/templates/tmpl-image-details.php:35
+msgid "File type"
+msgstr ""
+
+#: admin/templates/tmpl-image-details.php:38
+msgid "Uploaded on"
+msgstr ""
+
+#: admin/templates/tmpl-image-details.php:41
+msgid "File size"
+msgstr ""
+
+#: admin/templates/tmpl-image-details.php:44
+msgid "Dimensions"
+msgstr ""
+
+#: admin/templates/tmpl-image-details.php:47
+msgid "Uploaded by"
+msgstr ""
+
+#: admin/templates/tmpl-image-details.php:54
+msgid "Camera"
+msgstr ""
+
+#: admin/templates/tmpl-image-details.php:59
+msgid "Lens"
+msgstr ""
+
+#: admin/templates/tmpl-image-details.php:64
+msgid "Focal length"
+msgstr ""
+
+#: admin/templates/tmpl-image-details.php:70
+msgid "Shutter speed"
+msgstr ""
+
+#: admin/templates/tmpl-image-details.php:76
+msgid "Aperture"
+msgstr ""
+
+#: admin/templates/tmpl-image-details.php:81
+msgid "ISO"
+msgstr ""
+
+#: admin/templates/tmpl-image-details.php:86
+msgid "Created on"
+msgstr ""
+
+#: admin/templates/tmpl-image-details.php:98
+msgid "URL"
+msgstr ""
+
+#: admin/templates/tmpl-image-details.php:108
+msgid "Alt text"
+msgstr ""
+
+#: admin/templates/tmpl-settings.php:12
+msgid "Image info display on hover"
+msgstr ""
+
+#: admin/templates/tmpl-settings.php:30
+msgid "Select what info will be displayed on hovering the thumbnail."
+msgstr ""
+
+#: admin/templates/tmpl-tools.php:6
+msgid "Images are successfully imported"
+msgstr ""
+
+#: admin/templates/tmpl-tools.php:11
+msgid "No installed NextGen Gallery found"
+msgstr ""
+
+#: admin/templates/tmpl-tools.php:21
+msgid ""
+"This feature imports all your Wordpress Media images to the Gallery "
+"Factory. All other attachment file types are ignored. The imported images "
+"are added to the \"Unsorted images\" folder within Gallery Factory. The WP "
+"Media content is just copied during the import and remains untouched."
+msgstr ""
+
+#: admin/templates/tmpl-tools.php:23
+msgid ""
+"Please note, that Gallery Factory uses its own uploads folder on server, so "
+"physical image files will be copied there from the original WP location. "
+"Make sure that you have enough disk space before proceeding with the "
+"import. The import procedure may take time, depending on your WP Media "
+"content size. Import can't be canceled once started, and the result is not "
+"undoable."
+msgstr ""
+
+#: admin/templates/tmpl-tools.php:27
+msgid "Import images from WP Media"
+msgstr ""
+
+#: admin/templates/tmpl-tools.php:38
+msgid ""
+"This feature imports all your NextGen Gallery albums, galleries and images "
+"to the Gallery Factory. The NextGen content is just copied during the "
+"import and remains untouched."
+msgstr ""
+
+#: admin/templates/tmpl-tools.php:40
+msgid ""
+"Please note, that Gallery Factory uses its own uploads folder on server, so "
+"physical image files will be copied there from the original NextGen uploads "
+"folder. Make sure that you have enough disk space before proceeding with "
+"the import. The import procedure may take time, depending on your NextGen "
+"Gallery content size. Import can't be canceled once started, and the result "
+"is not undoable."
+msgstr ""
+
+#: admin/templates/tmpl-tools.php:46
+msgid "Create \"NextGen\" folder and put all imported items there"
+msgstr ""
+
+#: admin/templates/tmpl-tools.php:52
+msgid "Import images from NextGen Gallery"
+msgstr ""
+
+#: admin/templates/tmpl-tools.php:66
+msgid "Importing... Please do not reload this page until import is finished."
+msgstr ""
+
+#: shared/class-gallery-factory.php:79
+#, php-format
+msgid "Gallery Factory version %1$s requires WordPress %2$s or higher."
+msgstr ""
+
+#: shared/class-gallery-factory.php:206
+msgid "Folders"
+msgstr ""
+
+#: shared/class-gallery-factory.php:207
+msgid "Folder"
+msgstr ""
+
+#: shared/class-gallery-factory.php:208
+msgid "Add New Folder"
+msgstr ""
+
+#: shared/class-gallery-factory.php:209
+msgid "Edit Folder"
+msgstr ""
+
+#: shared/class-gallery-factory.php:210
+msgid "New Folder"
+msgstr ""
+
+#: shared/class-gallery-factory.php:211
+msgid "View Folder"
+msgstr ""
+
+#: shared/class-gallery-factory.php:212
+msgid "Search Folders"
+msgstr ""
+
+#: shared/class-gallery-factory.php:213
+msgid "No folders found"
+msgstr ""
+
+#: shared/class-gallery-factory.php:214
+msgid "No folders found in Trash"
+msgstr ""
+
+#: shared/class-gallery-factory.php:215
+msgid "All Folders"
+msgstr ""
+
+#: shared/class-gallery-factory.php:217
+msgid "Gallery Factory folder"
+msgstr ""
+
+#: shared/class-gallery-factory.php:243
+msgid "Album"
+msgstr ""
+
+#: shared/class-gallery-factory.php:244
+msgid "Add New Album"
+msgstr ""
+
+#: shared/class-gallery-factory.php:245
+msgid "Edit Album"
+msgstr ""
+
+#: shared/class-gallery-factory.php:246
+msgid "New Album"
+msgstr ""
+
+#: shared/class-gallery-factory.php:247
+msgid "View Album"
+msgstr ""
+
+#: shared/class-gallery-factory.php:248
+msgid "Search Albums"
+msgstr ""
+
+#: shared/class-gallery-factory.php:249
+msgid "No albums found"
+msgstr ""
+
+#: shared/class-gallery-factory.php:250
+msgid "No albums found in Trash"
+msgstr ""
+
+#: shared/class-gallery-factory.php:251
+msgid "All Albums"
+msgstr ""
+
+#: shared/class-gallery-factory.php:253
+msgid "Gallery Factory \"gallery\" post type"
+msgstr ""
+
+#: shared/class-gallery-factory.php:279
+msgid "Images"
+msgstr ""
+
+#: shared/class-gallery-factory.php:280
+msgid "Image"
+msgstr ""
+
+#: shared/class-gallery-factory.php:281 shared/class-gallery-factory.php:290
+msgid "All Images"
+msgstr ""
+
+#: shared/class-gallery-factory.php:282 shared/class-gallery-factory.php:283
+msgid "Add New Image"
+msgstr ""
+
+#: shared/class-gallery-factory.php:284
+msgid "Edit Image"
+msgstr ""
+
+#: shared/class-gallery-factory.php:285
+msgid "New Image"
+msgstr ""
+
+#: shared/class-gallery-factory.php:286
+msgid "View Image"
+msgstr ""
+
+#: shared/class-gallery-factory.php:287
+msgid "Search Images"
+msgstr ""
+
+#: shared/class-gallery-factory.php:288
+msgid "No images found"
+msgstr ""
+
+#: shared/class-gallery-factory.php:289
+msgid "No images found in Trash"
+msgstr ""
+
+#: shared/class-gallery-factory.php:292
+msgid "Gallery Factory \"image\" post type"
+msgstr ""
+
+#: shared/class-gallery-factory.php:317
+msgid "Gallery Factory \"gallery image link\" post type"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "Gallery Factory Lite"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "http://galleryfactory.vilyon.net"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Great tool for managing large image collections with user-friendly album "
+"manager interface and visual layout builder."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Vilyon Studio"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://vilyon.net/"
+msgstr ""
